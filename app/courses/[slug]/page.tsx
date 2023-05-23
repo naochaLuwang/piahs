@@ -1,9 +1,8 @@
 import React from "react";
-import Navbar from "@/components/Navbar/Navbar";
-import { getAllLinks } from "@/app/actions/getAllLinks";
+
 import BreadCrumb from "@/components/BreadCrumb";
 import { getSubLink } from "@/app/actions/getSublink";
-import { usePathname } from "next/navigation";
+
 import { getAllSubLinks } from "@/app/actions/getAllSubLink";
 
 export const metadata = {
