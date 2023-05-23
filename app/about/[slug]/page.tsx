@@ -4,13 +4,14 @@ import { getAllLinks } from "@/app/actions/getAllLinks";
 import BreadCrumb from "@/components/BreadCrumb";
 import { getSubLink } from "@/app/actions/getSublink";
 import { usePathname } from "next/navigation";
+import { getSublinks } from "@/app/actions/getAllSubLink";
 
 export const metadata = {
   title: "Dynamic page",
 };
 
 // export async function generateStaticParams() {
-//   const links = await getAllLinks();
+//   const links = await getSublinks();
 
 //   return links.map((link: any) => ({
 //     slug: link.slug,
