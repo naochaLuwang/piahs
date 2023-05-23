@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${montserrat.className} scrollbar-hide`}>
         <Header />
         <MobileHeader />
-        <div className="pt-28">
+        <div className="lg:pt-28">
           <Navbar />
           {children}
           <Footer />

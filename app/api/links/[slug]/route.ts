@@ -10,7 +10,7 @@ export async function GET(request: Request, { params }: { params: IParams }) {
   console.log(slug);
   const sublink = await prisma.links.findUnique({
     where: {
-      title: slug,
+      slug: slug,
     },
     include: {
       sublinks: true,

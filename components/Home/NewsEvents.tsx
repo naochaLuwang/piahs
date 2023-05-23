@@ -41,7 +41,7 @@ const NewsEvent = () => {
   }, [loading]);
 
   return (
-    <div className="w-full h-auto px-10 py-20 lg:px-28">
+    <div className="w-full h-auto py-20 px-14 lg:px-28">
       <h1 className="mb-10 text-3xl font-medium text-center text-blue-900">
         News & Events
       </h1>

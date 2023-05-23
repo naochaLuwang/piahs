@@ -55,7 +55,7 @@ const DegreeCarousel = ({ degrees }: any) => {
           {degrees.map((degree: any) => (
             <div
               key={degree.title}
-              className="flex flex-col items-center bg-white border shadow-xl rounded-3xl h-96 w-72"
+              className="flex flex-col items-center ml-4 bg-white border shadow-xl rounded-3xl h-96 w-72"
             >
               <div className="relative w-full h-80 rounded-t-2xl">
                 <Image
@@ -64,6 +64,7 @@ const DegreeCarousel = ({ degrees }: any) => {
                   fill
                   className="rounded-t-2xl"
                   style={{ objectFit: "fill" }}
+                  priority={true}
                 />
               </div>
 

@@ -23,7 +23,7 @@ const responsive = {
 
 const Testimonial = () => {
   return (
-    <div className="w-full h-auto py-20 bg-gray-100 ">
+    <div className="w-full h-auto px-6 py-20 bg-gray-100 lg:px-0">
       <div className="py-5 mx-auto max-w-7xl">
         <h1 className="mb-10 text-3xl font-semibold text-center text-yellow-600">
           What our students say?

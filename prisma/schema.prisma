@@ -46,14 +46,14 @@ model Account {
 model Links {
     id       String     @id @default(auto()) @map("_id") @db.ObjectId
     title    String     @unique
-    slug     String
+    slug     String     @unique
     order    Int
     sublinks Sublinks[]
     status   String
     pageType String
     userId   String     @db.ObjectId
     content  String
-    isMulti String
+    isMulti  String
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt

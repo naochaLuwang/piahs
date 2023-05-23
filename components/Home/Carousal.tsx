@@ -78,7 +78,10 @@ const HomeCarousal = ({ carousalImages }: any) => {
             //   customRightArrow={<CustomRightArrow />}
           >
             {carousalImages.map((image: any) => (
-              <div key={image.title} className="relative w-full h-[82vh] mt-10">
+              <div
+                key={image.title}
+                className="relative w-full lg:h-[82vh] h-96 mt-10"
+              >
                 <Image
                   src={image.url}
                   fill
