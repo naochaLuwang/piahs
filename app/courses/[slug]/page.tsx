@@ -3,18 +3,16 @@ import React from "react";
 import BreadCrumb from "@/components/BreadCrumb";
 import { getSubLink } from "@/app/actions/getSublink";
 
-import { getAllSubLinks } from "@/app/actions/getAllSubLink";
+import { getLink } from "@/app/actions/getLinks";
 
 export const metadata = {
   title: "Dynamic page",
 };
 
 // export async function generateStaticParams() {
-//   const links = await getAllSubLinks();
+//   const links = await getLink("Courses");
 
-//   console.log(links);
-
-//   return links.map((link: any) => ({
+//   return links[0].sublinks.map((link: any) => ({
 //     slug: link.slug,
 //   }));
 // }

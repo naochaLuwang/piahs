@@ -1,24 +1,21 @@
 import React from "react";
-import Navbar from "@/components/Navbar/Navbar";
-import { getAllLinks } from "@/app/actions/getAllLinks";
+
 import BreadCrumb from "@/components/BreadCrumb";
 import { getSubLink } from "@/app/actions/getSublink";
-import { usePathname } from "next/navigation";
-import { getAllSubLinks } from "@/app/actions/getAllSubLink";
+
+import { getLink } from "@/app/actions/getLinks";
 
 export const metadata = {
   title: "Dynamic page",
 };
 
-// export async function generateStaticParams() {
-//   const links = await getAllSubLinks();
+export async function generateStaticParams() {
+  const links = await getLink("About Us");
 
-//   console.log(links);
-
-//   return links.map((link: any) => ({
-//     slug: link.slug,
-//   }));
-// }
+  return links[0].sublinks.map((link: any) => ({
+    slug: link.slug,
+  }));
+}
 const DynamicPage = async ({ params }: any) => {
   const sublink: any = await getSubLink(params.slug);
 
