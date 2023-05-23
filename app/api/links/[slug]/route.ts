@@ -8,7 +8,7 @@ interface IParams {
 export async function GET(request: Request, { params }: { params: IParams }) {
   const { slug } = params;
   console.log(slug);
-  const sublink = await prisma.links.findMany({
+  const sublink = await prisma.links.findUnique({
     where: {
       title: slug,
     },

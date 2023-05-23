@@ -12,7 +12,7 @@ export const metadata = {
 export async function generateStaticParams() {
   const links = await getLink("Courses");
 
-  return links[0].sublinks.map((link: any) => ({
+  return links[0]?.sublinks.map((link: any) => ({
     slug: link.slug,
   }));
 }
