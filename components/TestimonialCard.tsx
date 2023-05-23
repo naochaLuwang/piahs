@@ -7,7 +7,7 @@ const TestimonialCard = () => {
       <div className="flex space-x-2">
         <div className="flex flex-col w-40 py-5 mr-2 lg:w-56">
           <FaQuoteLeft className="text-2xl text-neutral-500" />
-          <p className="text-xs font-medium tracking-wide text-justify lg:text-sm">
+          <p className="mt-2 text-xs font-medium tracking-wide text-justify lg:text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
             error perferendis odit unde incidunt ducimus! Fugiat reprehenderit
             repellat perferendis quisquam culpa nulla unde cum reiciendis
@@ -21,7 +21,12 @@ const TestimonialCard = () => {
         <div className="relative h-56 mt-3 ml-2 bg-blue-300 rounded-md w-44">
           <div className="absolute top-1 right-1">
             <div className="relative h-56 w-44">
-              <Image src="/amit.jpeg" alt="profile" fill />
+              <Image
+                src="/profile2.jpeg"
+                alt="profile"
+                fill
+                style={{ objectFit: "cover" }}
+              />
             </div>
           </div>
         </div>

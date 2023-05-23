@@ -55,24 +55,26 @@ const DegreeCarousel = ({ degrees }: any) => {
           {degrees.map((degree: any) => (
             <div
               key={degree.title}
-              className="flex flex-col items-center ml-4 bg-white border shadow-xl rounded-3xl h-96 w-72"
+              className="flex flex-col items-center mr-2 bg-white border shadow-xl rounded-3xl h-96 w-72"
             >
-              <div className="relative w-full h-80 rounded-t-2xl">
-                <Image
-                  src={degree.url}
-                  alt={degree.title}
-                  fill
-                  className="rounded-t-2xl"
-                  style={{ objectFit: "fill" }}
-                  priority={true}
-                />
-              </div>
+              <Link href={degree.slug}>
+                <div className="relative w-72 h-80 rounded-t-2xl">
+                  <Image
+                    src={degree.url}
+                    alt={degree.title}
+                    fill
+                    className="rounded-t-2xl"
+                    style={{ objectFit: "fill" }}
+                    priority={true}
+                  />
+                </div>
 
-              <div className="flex flex-col items-center justify-center w-full h-16 bg-blue-900 rounded-b-2xl">
-                <h1 className="text-sm font-medium text-center text-yellow-500">
-                  {degree.title}
-                </h1>
-              </div>
+                <div className="flex flex-col items-center justify-center w-full h-16 bg-blue-900 rounded-b-2xl">
+                  <h1 className="text-sm font-medium text-center text-yellow-500">
+                    {degree.title}
+                  </h1>
+                </div>
+              </Link>
             </div>
           ))}
         </Carousel>

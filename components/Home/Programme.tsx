@@ -4,22 +4,22 @@ import DegreeCarousel from "./DegreeCarousel";
 const degreeCarousal = [
   {
     title: "Bachelor of Medical Radiographic Technology (BMRT)",
-    slug: "/hello",
+    slug: "/courses/bmrt",
     url: "/brt.jpeg",
   },
   {
     title: "Bachelor of Medical Laboratory Technician (BMLT)",
-    slug: "/hello",
+    slug: "/courses/bmrt",
     url: "/blt.jpeg",
   },
   {
     title: "Bachelor of Physiotherapy (BPT)",
-    slug: "/hello",
+    slug: "/courses/bpt",
     url: "/physio1.webp",
   },
   {
     title: "Lateral Entry - Bachelor of Physiotherapy",
-    slug: "/hello",
+    slug: "/courses/bpt_lateral",
     url: "/physio2.jpeg",
   },
 ];

@@ -28,7 +28,7 @@ const facilities: FacilityProps[] = [
     title: "Sports & Game facility",
   },
   {
-    icon: "/laboratory.png",
+    icon: "/classroom.png",
     title: "World class Classroom",
   },
 ];

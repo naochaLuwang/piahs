@@ -3,7 +3,7 @@ import { BiChevronsRight } from "react-icons/bi";
 
 const NewsCard = () => {
   return (
-    <div className="relative flex flex-col items-center mx-2 bg-white border rounded-lg shadow-xl lg:mx-2 h-96 w-72">
+    <div className="relative flex flex-col items-center mr-2 bg-white border rounded-lg shadow-xl lg:mx-2 h-96 w-72">
       <div className="relative w-full rounded-t-lg h-44">
         <Image
           src="/blt.jpeg"
