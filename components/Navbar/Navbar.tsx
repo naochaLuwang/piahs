@@ -26,7 +26,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:3000/api/links")
+    fetch(`${process.env.API_URL}/api/links`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
