@@ -9,13 +9,13 @@ export const metadata = {
   title: "Dynamic page",
 };
 
-// export async function generateStaticParams() {
-//   const links = await getLink("Courses");
+export async function generateStaticParams() {
+  const links = await getLink("Courses");
 
-//   return links[0].sublinks.map((link: any) => ({
-//     slug: link.slug,
-//   }));
-// }
+  return links[0].sublinks.map((link: any) => ({
+    slug: link.slug,
+  }));
+}
 
 const DynamicPage = async ({ params }: any) => {
   const sublink: any = await getSubLink(params.slug);
