@@ -55,7 +55,7 @@ export default function Navbar() {
                       <ul
                         className={`grid w-[400px] gap-3 p-4 ${
                           navlink.isMulti === "YES"
-                            ? "w-[600px] md:grid-cols-2"
+                            ? "w-[800px] md:grid-cols-2"
                             : "grid-cols-1 md:w-[400px]"
                         }   `}
                       >
