@@ -80,7 +80,7 @@ const HomeCarousal = ({ carousalImages }: any) => {
             {carousalImages.map((image: any) => (
               <div
                 key={image.title}
-                className="relative w-full lg:h-[82vh] h-96 mt-10"
+                className="relative w-full lg:h-[82vh] h-96 lg:mt-10"
               >
                 <Image
                   src={image.url}
