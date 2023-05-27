@@ -53,7 +53,7 @@ const formats = [
 
 export function MyEditor({ onChange, content }: any) {
   return (
-    <div className="h-auto mr-10 -ml-10">
+    <div className="h-auto mr-10 -ml-5">
       {/* Render the dynamic ReactQuill component */}
 
       <DynamicReactQuill
