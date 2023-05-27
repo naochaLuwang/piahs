@@ -8,7 +8,7 @@ interface LogoProps {
 
 const Logo: FC<LogoProps> = ({ imageUrl }) => {
   return (
-    <div className="relative flex-shrink-0 w-24 h-24">
+    <div className="relative flex-shrink-0 w-24 h-24 bg-white rounded-full">
       <Link href="/">
         <Image src={imageUrl!} alt="logo" fill style={{ objectFit: "fill" }} />
       </Link>

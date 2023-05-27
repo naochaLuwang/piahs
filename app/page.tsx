@@ -10,6 +10,7 @@ import Facilities from "@/components/Home/Facilities";
 import NewsEvents from "@/components/Home/NewsEvents";
 
 import Testimonial from "@/components/Home/Testimonial";
+import Whychooseus from "../components/Home/WhyChooseUs";
 
 import HeroPage from "@/components/HeroPage";
 
@@ -38,7 +39,8 @@ const HomePage = async () => {
       {/* <HomeCarousal carousalImages={carousalimages} /> */}
 
       <HeroPage />
-      <Hero />
+      {/* <Hero /> */}
+      <Whychooseus />
       <Banner title="Pratiksha Institute of Allied Health Sciences is" />
       <ApplyNow />
       <Programme />

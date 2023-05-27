@@ -35,7 +35,7 @@ const degreeCarousal = [
 const diplomaCarousal = [
   {
     title: "Diploma of Medical Radiographic Technology (DMRT)",
-    slug: "/hello",
+    slug: "/courses/dmrt",
     programme: "Degree",
     duration: 3,
     url: "/brt.jpeg",

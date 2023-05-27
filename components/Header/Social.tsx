@@ -1,5 +1,6 @@
 "use client";
 import { FaFacebookF } from "react-icons/fa";
+
 import {
   AiFillInstagram,
   AiOutlineTwitter,
@@ -21,19 +22,22 @@ const Social = () => {
       }`}
     >
       <div className="flex items-center space-x-2">
-        <div className="px-1 py-1 bg-white rounded-full w-fit h-fit">
-          <FaFacebookF className="w-6 h-6 text-indigo-950" />
-        </div>
-        <div className="px-1 py-1 bg-white rounded-full w-fit h-fit">
+        <Link href="/">
+          <div className="px-1 py-1 transition-all duration-100 ease-in-out bg-white rounded-full w-fit h-fit hover:bg-yellow-500 hover:bg-opacity-90">
+            <FaFacebookF className="w-6 h-6 text-indigo-950" />
+          </div>
+        </Link>
+
+        <div className="px-1 py-1 transition-all duration-100 ease-in-out bg-white rounded-full w-fit h-fit hover:bg-yellow-500 hover:bg-opacity-90">
           <AiFillInstagram className="w-6 h-6 text-indigo-950" />
         </div>
-        <div className="px-1 py-1 bg-white rounded-full w-fit h-fit">
+        <div className="px-1 py-1 transition-all duration-100 ease-in-out bg-white rounded-full w-fit h-fit hover:bg-yellow-500 hover:bg-opacity-90">
           <AiOutlineTwitter className="w-6 h-6 text-indigo-950" />
         </div>
-        <div className="px-1 py-1 bg-white rounded-full w-fit h-fit">
+        <div className="px-1 py-1 transition-all duration-100 ease-in-out bg-white rounded-full w-fit h-fit hover:bg-yellow-500 hover:bg-opacity-90">
           <AiFillLinkedin className="w-6 h-6 text-indigo-950" />
         </div>
-        <div className="px-1 py-1 bg-white rounded-full w-fit h-fit">
+        <div className="px-1 py-1 transition-all duration-100 ease-in-out bg-white rounded-full w-fit h-fit hover:bg-yellow-500 hover:bg-opacity-90">
           <AiFillYoutube className="w-6 h-6 text-indigo-950" />
         </div>
       </div>
