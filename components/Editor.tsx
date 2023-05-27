@@ -56,11 +56,11 @@ export function MyEditor({ onChange, content }: any) {
     <div className="h-auto">
       {/* Render the dynamic ReactQuill component */}
       <DynamicReactQuill
-        style={{ height: "auto", border: "none" }}
         value={content}
         modules={modules}
         // formats={formats}
         readOnly={true}
+        theme={null}
       />
     </div>
   );
