@@ -79,3 +79,10 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+.react-quill-container .ql-container,
+.react-quill-container .ql-editor {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}

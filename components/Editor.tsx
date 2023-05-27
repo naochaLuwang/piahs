@@ -53,14 +53,15 @@ const formats = [
 
 export function MyEditor({ onChange, content }: any) {
   return (
-    <div className="h-auto">
+    <div className="h-auto mr-10">
       {/* Render the dynamic ReactQuill component */}
+
       <DynamicReactQuill
         value={content}
         modules={modules}
         // formats={formats}
         readOnly={true}
-        theme={null}
+        className="bg-white react-quill-container ql-container ql-editor"
       />
     </div>
   );
