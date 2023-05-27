@@ -13,6 +13,7 @@ import Testimonial from "@/components/Home/Testimonial";
 import Whychooseus from "../components/Home/WhyChooseUs";
 
 import HeroPage from "@/components/HeroPage";
+import ScrollReveal from "../components/ScrollReveal";
 
 export const metadata = {
   title: "PRATIKSHA INSTITUTE OF ALLIED HEALTH SCIENCE",
@@ -41,7 +42,9 @@ const HomePage = async () => {
       <HeroPage />
       {/* <Hero /> */}
       <Whychooseus />
+
       <Banner title="Pratiksha Institute of Allied Health Sciences is" />
+
       <ApplyNow />
       <Programme />
 

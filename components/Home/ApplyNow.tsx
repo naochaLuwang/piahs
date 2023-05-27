@@ -19,9 +19,12 @@ const ApplyNow = () => {
             function in a variety of settings.
           </h1>
           <Link href="/">
-            <h1 className="px-2 py-1 mt-5 font-medium text-blue-900 transition-all duration-200 ease-in-out border-2 border-blue-900 rounded-md shadow-sm w-fit hover:bg-blue-900 hover:text-white">
-              Click here to apply
-            </h1>
+            <div className="rounded-md w-fit  px-3.5 py-2 m-2 overflow-hidden relative group cursor-pointer border-2 font-medium border-blue-950  ">
+              <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-blue-950 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+              <span className="relative text-base font-medium transition duration-300 text-blue-950 group-hover:text-white ease">
+                Click here to apply
+              </span>
+            </div>
           </Link>
         </div>
         <div className="relative">
