@@ -26,7 +26,7 @@ const DynamicPage = async ({ params }: any) => {
 
   // @ts-ignore
   return (
-    <div className="flex flex-col w-full h-auto max-w-5xl ">
+    <div className="flex flex-col w-full h-auto ">
       <BreadCrumb home={"Home"} link={"About Us"} sublink={sublink[0]?.title} />
       <h1 className="mt-5 text-2xl font-medium tracking-wider text-blue-800">
         {sublink[0]?.title}

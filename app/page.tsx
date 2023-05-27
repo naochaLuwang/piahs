@@ -1,15 +1,17 @@
 import React from "react";
 
 import Hero from "@/components/Home/Hero";
+
 import Banner from "@/components/Home/Banner";
 import ApplyNow from "@/components/Home/ApplyNow";
 import Programme from "@/components/Home/Programme";
 import Facilities from "@/components/Home/Facilities";
 
-import HomeCarousal from "@/components/Home/Carousal";
 import NewsEvents from "@/components/Home/NewsEvents";
 
 import Testimonial from "@/components/Home/Testimonial";
+
+import HeroPage from "@/components/HeroPage";
 
 export const metadata = {
   title: "PRATIKSHA INSTITUTE OF ALLIED HEALTH SCIENCE",
@@ -33,7 +35,9 @@ const carousalimages = [
 const HomePage = async () => {
   return (
     <main className="overflow-hidden">
-      <HomeCarousal carousalImages={carousalimages} />
+      {/* <HomeCarousal carousalImages={carousalimages} /> */}
+
+      <HeroPage />
       <Hero />
       <Banner title="Pratiksha Institute of Allied Health Sciences is" />
       <ApplyNow />

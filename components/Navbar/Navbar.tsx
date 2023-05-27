@@ -20,9 +20,28 @@ import {
 export default function Navbar() {
   const [data, setData] = useState<LinkProps[] | null>(null);
   const [isLoading, setLoading] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const pathName = usePathname();
 
-  const pathname = usePathname();
-  console.log(pathname);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.pageYOffset;
+      if (scrollPosition > 0) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // const pathname = usePathname();
+  // console.log(pathname);
 
   useEffect(() => {
     setLoading(true);
@@ -36,11 +55,21 @@ export default function Navbar() {
 
   if (isLoading)
     return (
-      <div className="z-50 hidden w-full h-10 pl-5 bg-yellow-500 lg:block lg:fixed top-28"></div>
+      <div className="z-50 hidden w-full h-10 pl-5 bg-transparent lg:block lg:fixed top-28"></div>
     );
 
   return (
-    <div className="z-50 hidden w-full h-10 pl-5 bg-yellow-500 lg:block lg:fixed top-28 ">
+    <div
+      className={`z-50 w-full h-10 pl-5 bg-transparent hidden lg:block  ${
+        isSticky
+          ? " sticky top-28 transition-all duration-75 ease-in-out"
+          : " lg:fixed top-28"
+      } ${
+        pathName == "/" && !isSticky
+          ? "bg-transparent top-40"
+          : "bg-yellow-500 bg-opacity-90"
+      }`}
+    >
       <NavigationMenu>
         <NavigationMenuList>
           {data !== null &&
@@ -48,7 +77,11 @@ export default function Navbar() {
               <div key={navlink.id}>
                 {navlink.sublinks.length > 0 ? (
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger>
+                    <NavigationMenuTrigger
+                      className={`${
+                        isSticky ? "text-neutral-800" : "text-white"
+                      }`}
+                    >
                       {navlink.title}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -75,7 +108,9 @@ export default function Navbar() {
                   <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
                       <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
+                        className={`${navigationMenuTriggerStyle()} ${
+                          isSticky ? "text-neutral-800" : "text-white"
+                        }`}
                       >
                         {navlink.title}
                       </NavigationMenuLink>
@@ -105,7 +140,7 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
+          <div className="text-sm font-medium leading-none ">{title}</div>
           <p className="text-sm leading-snug line-clamp-2 text-muted-foreground">
             {children}
           </p>

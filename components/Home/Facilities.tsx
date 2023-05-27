@@ -8,38 +8,38 @@ interface FacilityProps {
 
 const facilities: FacilityProps[] = [
   {
-    icon: "/libraries.png",
+    icon: "/library1.png",
     title: "Library with plenty of Books",
   },
   {
-    icon: "/laboratory.png",
+    icon: "/laboratory1.png",
     title: "World class Laboratories",
   },
   {
-    icon: "/hostel.png",
+    icon: "/hostel1.png",
     title: "Hostel Facility",
   },
   {
-    icon: "/scholarship.png",
+    icon: "/scholarship1.png",
     title: "Scholarship for deserving students",
   },
   {
-    icon: "/sports.png",
+    icon: "/sports1.png",
     title: "Sports & Game facility",
   },
   {
-    icon: "/classroom.png",
+    icon: "/classroom1.png",
     title: "World class Classroom",
   },
 ];
 
 const Facilities = () => {
   return (
-    <div className="w-full h-auto px-10 py-20 bg-blue-950 lg:px-0">
-      <h1 className="text-2xl font-medium tracking-wider text-center text-yellow-500">
+    <div className="w-full h-auto px-10 py-20 bg-indigo-950 lg:px-0">
+      <h1 className="text-2xl font-semibold tracking-wider text-center text-white">
         Our Facilities
       </h1>
-      <p className="mt-5 text-sm text-center text-yellow-300">
+      <p className="mt-5 text-sm text-center text-white">
         Combining the best facilities and experienced faculty to provide you
         nothing short of the best
       </p>
@@ -51,7 +51,7 @@ const Facilities = () => {
             key={facility.title}
           >
             <Image src={facility.icon} alt="library" width={100} height={100} />
-            <h1 className="text-center text-yellow-400">{facility.title}</h1>
+            <h1 className="text-center text-white">{facility.title}</h1>
           </div>
         ))}
       </div>

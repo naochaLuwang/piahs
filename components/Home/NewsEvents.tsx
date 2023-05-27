@@ -4,9 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import Image from "next/image";
-// import urlFor from "@/lib/urlFor";
-// import CustomLeftArrow from "./CustomLeftArrow";
-// import CustomRightArrow from "./CustomRightArrow";
+import CarousalButton from "../CarousalButton";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import NewsCard from "./NewsCard";
@@ -52,17 +50,22 @@ const NewsEvent = () => {
         rewindWithAnimation={true}
         autoPlaySpeed={4000}
         arrows={false}
-        showDots={false}
+        showDots={true}
+        customButtonGroup={<CarousalButton />}
+        renderButtonGroupOutside={true}
       >
         <NewsCard />
         <NewsCard />
         <NewsCard />
         <NewsCard />
       </Carousel>
-      <div className="flex items-center justify-center w-full mt-10">
-        <h1 className="px-4 py-2 text-center text-white bg-blue-900 rounded-md w-fit">
-          See More
-        </h1>
+      <div className="flex justify-center w-full">
+        <div className="rounded-md w-fit px-3.5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-indigo-950 ">
+          <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-indigo-950 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+          <span className="relative text-lg transition duration-300 text-indigo-950 group-hover:text-white ease">
+            Read More
+          </span>
+        </div>
       </div>
     </div>
   );

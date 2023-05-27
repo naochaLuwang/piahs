@@ -5,21 +5,29 @@ const degreeCarousal = [
   {
     title: "Bachelor of Medical Radiographic Technology (BMRT)",
     slug: "/courses/bmrt",
+    programme: "Degree",
+    duration: 3,
     url: "/brt.jpeg",
   },
   {
     title: "Bachelor of Medical Laboratory Technician (BMLT)",
     slug: "/courses/bmrt",
+    programme: "Degree",
+    duration: 3,
     url: "/blt.jpeg",
   },
   {
     title: "Bachelor of Physiotherapy (BPT)",
     slug: "/courses/bpt",
+    programme: "Degree",
+    duration: 3,
     url: "/physio1.webp",
   },
   {
     title: "Lateral Entry - Bachelor of Physiotherapy",
     slug: "/courses/bpt_lateral",
+    programme: "Degree",
+    duration: 3,
     url: "/physio2.jpeg",
   },
 ];
@@ -28,21 +36,29 @@ const diplomaCarousal = [
   {
     title: "Diploma of Medical Radiographic Technology (DMRT)",
     slug: "/hello",
+    programme: "Degree",
+    duration: 3,
     url: "/brt.jpeg",
   },
   {
     title: "Diploma of Medical Laboratory Technician (DMLT)",
     slug: "/hello",
+    programme: "Degree",
+    duration: 3,
     url: "/blt.jpeg",
   },
   {
     title: "Diploma of Physiotherapy (DPT)",
     slug: "/hello",
+    programme: "Degree",
+    duration: 3,
     url: "/physio1.webp",
   },
   {
     title: "Lateral Entry - Diploma of Physiotherapy",
     slug: "/hello",
+    programme: "Degree",
+    duration: 3,
     url: "/physio2.jpeg",
   },
 ];

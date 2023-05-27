@@ -15,6 +15,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        hero: "url('../public/home.jpeg')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

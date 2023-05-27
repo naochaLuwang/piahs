@@ -5,6 +5,7 @@ import "./globals.css";
 import { Montserrat } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 import MobileHeader from "@/components/Header/MobileHeader";
+import Social from "@/components/Header/Social";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -21,13 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className} scrollbar-hide`}>
+        <Social />
         <Header />
         <MobileHeader />
-        <div className="lg:pt-28">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

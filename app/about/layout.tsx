@@ -8,9 +8,9 @@ export default function AboutLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex px-10 py-10">
+    <div className="flex w-full h-auto px-10 pb-20 mt-40 overflow-hidden ">
       {children}
-      <div className="flex flex-col pt-10 space-y-5">
+      <div className="flex flex-col space-y-5">
         <Contact />
         <QuickLinks />
         <ImportantLinks />
