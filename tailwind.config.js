@@ -15,6 +15,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        babas: ["Bebas Neue", "sans-serif"],
+      },
       backgroundImage: {
         hero: "url('../public/home.jpeg')",
       },
