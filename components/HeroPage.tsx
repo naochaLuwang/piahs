@@ -50,7 +50,8 @@ const HeroPage = () => {
             loop: true,
             wrapperClassName:
               "text-4xl font-bold underline decoration-yellow-600 tracking-wider hidden lg:block ",
-            cursorClassName: "text-4xl ml-2 text-yellow-600 hidden lg:block",
+            cursorClassName:
+              "text-4xl ml-2 text-yellow-600 hidden lg:inline-flex",
             cursor: "|",
           }}
         />

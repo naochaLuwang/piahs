@@ -79,7 +79,7 @@ const Facilities = () => {
       <div className="grid grid-cols-1 gap-6 mt-10 lg:grid-cols-3">
         {facilities.map((facility, index) => (
           <motion.div
-            className="py-5 hero-detail"
+            className="hidden py-5 hero-detail lg:block"
             key={facility.title}
             style={{ x, y, rotateX, rotateY, z: 100 }}
             drag
@@ -100,6 +100,22 @@ const Facilities = () => {
               <h1 className="text-center text-white">{facility.title}</h1>
             </div>
           </motion.div>
+        ))}
+        {facilities.map((facility, index) => (
+          <div className="py-5  hero-detail lg:hidden" key={facility.title}>
+            <div
+              key={facility.title}
+              className="flex flex-col items-center space-y-3 facility-item"
+            >
+              <Image
+                src={facility.icon}
+                alt="library"
+                width={100}
+                height={100}
+              />
+              <h1 className="text-center text-white">{facility.title}</h1>
+            </div>
+          </div>
         ))}
       </div>
     </div>
