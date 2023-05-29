@@ -27,7 +27,7 @@ const HeroPage = () => {
       className={`${isSticky ? "h-[80vh]" : "h-[95vh]"} w-full`}
       style={{
         background:
-          "linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url('../home2.jpeg')",
+          "linear-gradient(rgba(0, 0, 100, 0.5), rgba(0, 0, 100, 0.5)), url('../home2.jpeg')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",

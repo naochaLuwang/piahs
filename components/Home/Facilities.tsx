@@ -43,7 +43,7 @@ const facilities: FacilityProps[] = [
 const Facilities = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.2, // Adjust the threshold as needed
+    threshold: 0.1, // Adjust the threshold as needed
   });
 
   const x = useMotionValue(0);
@@ -54,7 +54,7 @@ const Facilities = () => {
     gsap.from(".hero-detail", {
       opacity: 0,
       y: 50,
-      stagger: 0.3,
+      stagger: 0.2,
       duration: 0.8,
       ease: "power3.out",
     });
