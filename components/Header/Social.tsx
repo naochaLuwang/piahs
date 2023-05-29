@@ -17,7 +17,7 @@ const Social = () => {
   const pathname = usePathname();
   return (
     <div
-      className={`flex items-center justify-between w-full h-12 px-10 py-1 bg-indigo-950 ${
+      className={` items-center hidden lg:flex justify-between w-full h-12 px-10 py-1 bg-indigo-950 ${
         pathname == "/" ? "block" : "hidden"
       }`}
     >

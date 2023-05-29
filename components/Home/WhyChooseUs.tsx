@@ -58,11 +58,13 @@ const Whychooseus = () => {
 
   return (
     <div className="w-full h-auto px-10 py-20" ref={ref}>
-      <h1 className="text-3xl tracking-wide text-indigo-950">Why Choose Us?</h1>
-      <div className="grid grid-cols-4 gap-6 mt-10">
+      <h1 className="text-3xl tracking-wide text-center text-indigo-950 lg:text-start">
+        Why Choose Us?
+      </h1>
+      <div className="grid grid-cols-1 gap-6 mt-10 lg:grid-cols-4">
         {heroDetails.map((detail, index) => (
           <motion.div
-            className="flex flex-col items-start py-5 border-0 border-r-2 hero-detail"
+            className="flex flex-col items-center py-5 border-0 lg:items-start lg:border-r-2 hero-detail"
             key={detail.title}
             style={{ x, y, rotateX, rotateY, z: 100 }}
             drag
@@ -77,7 +79,9 @@ const Whychooseus = () => {
               height={100}
             />
             <h1 className="mt-4 text-xl font-bold">{detail.title}</h1>
-            <p className="mt-2 text-base text-gray-500">{detail.description}</p>
+            <p className="mt-2 text-base text-center text-gray-500 lg:text-start">
+              {detail.description}
+            </p>
           </motion.div>
         ))}
       </div>

@@ -26,7 +26,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({ children }) => {
   }, [inView]);
 
   return (
-    <div ref={inViewRef} className="scroll-reveal">
+    <div ref={inViewRef} className="w-full h-auto scroll-reveal">
       <div ref={revealRef}>{children}</div>
     </div>
   );

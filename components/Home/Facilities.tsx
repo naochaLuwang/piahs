@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import gsap from "gsap";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Slide } from "react-awesome-reveal";
+import ScrollReveal from "../ScrollReveal";
 
 interface FacilityProps {
   icon: string;
@@ -65,17 +66,17 @@ const Facilities = () => {
 
   return (
     <div className="w-full h-auto px-10 py-20 bg-indigo-950" ref={ref}>
-      <Slide>
+      <ScrollReveal>
         <h1 className="text-2xl font-semibold tracking-wider text-center text-white">
           Our Facilities
         </h1>
-      </Slide>
+      </ScrollReveal>
 
       <p className="mt-5 text-sm text-center text-white">
         Combining the best facilities and experienced faculty to provide you
         nothing short of the best
       </p>
-      <div className="grid grid-cols-3 gap-6 mt-10">
+      <div className="grid grid-cols-1 gap-6 mt-10 lg:grid-cols-3">
         {facilities.map((facility, index) => (
           <motion.div
             className="py-5 hero-detail"
