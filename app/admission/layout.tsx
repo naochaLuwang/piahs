@@ -2,7 +2,7 @@ import Contact from "@/components/about/Contact";
 import ImportantLinks from "@/components/about/ImportantLinks";
 import QuickLinks from "@/components/about/QuickLinks";
 
-export default function CoursesLayout({
+export default function AdmissionLayout({
   children,
 }: {
   children: React.ReactNode;

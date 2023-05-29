@@ -6,7 +6,7 @@ const MobileHeader = () => {
     <div className="fixed top-0 z-50 flex flex-col w-full h-32 px-2 py-3 overflow-hidden shadow-sm bg-indigo-950 lg:hidden">
       <div className="flex w-full space-x-3">
         <div className="relative flex-shrink-0 w-20 h-20">
-          <Image src="/PIAHS_logo.png" alt="logo" fill />
+          <Image src="/PIAHS_logon.png" alt="logo" fill />
         </div>
         <div className="flex flex-col space-y-1">
           <h1 className="text-sm font-medium text-white">

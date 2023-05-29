@@ -10,17 +10,6 @@ export const metadata = {
   title: "Dynamic page",
 };
 
-// export async function generateStaticParams() {
-//   const links = await fetch(`http://127.0.0.1:3000/api/links/about`).then(
-//     (res) => res.json()
-//   );
-
-//   console.log(links);
-
-//   return links?.sublinks.map((link: any) => ({
-//     slug: link.slug,
-//   }));
-// }
 const DynamicPage = async ({ params }: any) => {
   const sublink: any = await getSubLink(params.slug);
 
