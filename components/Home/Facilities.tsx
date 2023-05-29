@@ -53,7 +53,7 @@ const Facilities = () => {
   const revealDetails = () => {
     gsap.from(".hero-detail", {
       opacity: 0,
-      y: 50,
+      y: 100,
       stagger: 0.2,
       duration: 0.8,
       ease: "power3.out",
