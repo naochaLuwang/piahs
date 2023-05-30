@@ -42,7 +42,7 @@ const Contact = () => {
       });
   };
   return (
-    <div className="flex flex-col items-center h-auto px-8 py-10 space-y-3 rounded-md shadow-lg w-96 bg-blue-950">
+    <div className="flex flex-col items-center h-auto px-8 py-10 space-y-3 shadow-lg rounded-xl w-96 bg-blue-950">
       <h1 className="text-white">Quick Contact</h1>
       <p className="text-xs text-center text-white">
         For any doubts or queries, please fill the details below& we will

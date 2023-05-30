@@ -18,7 +18,7 @@ const DynamicPage = async ({ params }: any) => {
   // @ts-ignore
   return (
     <div className="flex flex-col w-full md:flex-row">
-      <div className="flex flex-col h-auto px-4 md:w-2/3 md:px-0">
+      <div className="flex flex-col h-auto px-4 md:w-2/3 md:px-0 lg:w-full">
         <BreadCrumb home={"Home"} link={"About"} sublink={sublink[0]?.title} />
         <h1 className="mt-5 text-2xl font-medium tracking-wider text-blue-800">
           {sublink[0]?.title}
@@ -28,19 +28,19 @@ const DynamicPage = async ({ params }: any) => {
         </div>
       </div>
 
-      <div className="flex flex-col px-4 md:w-1/3 md:px-0">
-        <div className="flex items-center justify-center w-full md:justify-start">
-          <div className="px-4 md:px-8">
+      <div className="flex flex-col md:w-1/3 ">
+        <div className="flex items-center justify-center w-full lg:justify-end">
+          <div className="px-4 md:px-8 lg:px-0">
             <Contact />
           </div>
         </div>
-        <div className="flex items-center justify-center md:justify-start">
-          <div className="px-4 mt-5 md:px-8 ">
+        <div className="flex items-center justify-center md:justify-start lg:justify-end">
+          <div className="px-4 mt-5 md:px-8 lg:px-0">
             <QuickLinks />
           </div>
         </div>
-        <div className="flex items-center justify-center md:justify-start">
-          <div className="px-4 mt-5 md:px-8">
+        <div className="flex items-center justify-center md:justify-start lg:justify-end">
+          <div className="px-4 mt-5 md:px-8 lg:px-0">
             <ImportantLinks />
           </div>
         </div>

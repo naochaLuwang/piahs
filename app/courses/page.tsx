@@ -1,5 +1,7 @@
-// "use client";
-// import React, { useEffect, useState } from "react";
+export const metadata = {
+  title: "Programmes | PIAHS",
+};
+
 import {
   Tabs,
   TabsContent,
@@ -11,32 +13,9 @@ import { getAllProgrammes } from "../actions/getAllProgrammes";
 import { getProgrammes } from "../actions/getProgrammes";
 
 const CoursePage = async () => {
-  // const [programmes, setProgrammes] = useState([]);
-  // const [degreeProgrammes, setDegreeProgrammes] = useState([]);
-  // const [diplomaProgrammes, setDiplomaProgrammes] = useState([]);
   const programmes = await getAllProgrammes();
   const degreeProgrammes = await getProgrammes("degree");
   const diplomaProgrammes = await getProgrammes("diploma");
-
-  // useEffect(() => {
-  //   fetch(`/api/programme`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setProgrammes(data);
-  //     });
-  //   fetch(`/api/programme/degree`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setDegreeProgrammes(data);
-  //     });
-  //   fetch(`/api/programme/diploma`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setDiplomaProgrammes(data);
-  //     });
-  // }, []);
-
-  // console.log(programmes);
 
   return (
     <div className="flex flex-col w-full py-16">

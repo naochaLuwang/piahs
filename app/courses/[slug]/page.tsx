@@ -49,23 +49,37 @@ const CoursesDynamic = async ({ params }: any) => {
   // @ts-ignore
 
   return (
-    <div className="flex w-full">
-      <div className="flex flex-col w-full h-auto ">
+    <div className="flex flex-col w-full md:flex-row">
+      <div className="flex flex-col h-auto px-4 md:w-2/3 md:px-0 lg:w-full">
         <BreadCrumb
           home={"Home"}
           link={"Courses"}
-          sublink={sublink[0]?.subtitle}
+          sublink={sublink[0]?.title}
         />
         <h1 className="mt-5 text-2xl font-medium tracking-wider text-blue-800">
-          {sublink[0]?.title}
+          {sublink[0]?.subtitle}
         </h1>
-        <MyEditor content={sublink[0]?.content} />
+        <div className="w-full">
+          <MyEditor content={sublink[0]?.content} />
+        </div>
       </div>
 
-      <div className="flex flex-col space-y-5">
-        <Contact />
-        <QuickLinks />
-        <ImportantLinks />
+      <div className="flex flex-col md:w-1/3 ">
+        <div className="flex items-center justify-center w-full lg:justify-end">
+          <div className="px-4 md:px-8 lg:px-0">
+            <Contact />
+          </div>
+        </div>
+        <div className="flex items-center justify-center md:justify-start lg:justify-end">
+          <div className="px-4 mt-5 md:px-8 lg:px-0">
+            <QuickLinks />
+          </div>
+        </div>
+        <div className="flex items-center justify-center md:justify-start lg:justify-end">
+          <div className="px-4 mt-5 md:px-8 lg:px-0">
+            <ImportantLinks />
+          </div>
+        </div>
       </div>
     </div>
   );
