@@ -7,6 +7,17 @@ import CarousalButton from "../CarousalButton";
 import Image from "next/image";
 import Link from "next/link";
 
+interface Degree {
+  title: string;
+  programme: string;
+  duration: string;
+  slug: string;
+}
+
+interface DegreeCarouselProps {
+  degrees: Degree[];
+}
+
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -25,7 +36,7 @@ const responsive = {
   },
 };
 
-const DegreeCarousel = ({ degrees }) => {
+const DegreeCarousel: React.FC<DegreeCarouselProps> = ({ degrees }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
