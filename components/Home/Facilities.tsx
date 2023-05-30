@@ -43,7 +43,7 @@ const facilities: FacilityProps[] = [
 const Facilities = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1, // Adjust the threshold as needed
+    threshold: 0.2, // Adjust the threshold as needed
   });
 
   const x = useMotionValue(0);

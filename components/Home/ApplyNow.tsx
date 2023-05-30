@@ -1,12 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import ScrollReveal from "../ScrollReveal";
 
 const ApplyNow = () => {
   return (
     <div className="flex flex-col items-center w-full h-auto px-5 py-20 overflow-hidden bg-gray-50 lg:px-0">
-      <h1 className="text-3xl font-medium tracking-wide text-indigo-950">
-        Get the Support You Need for the career You Want
-      </h1>
+      <ScrollReveal>
+        <h1 className="text-3xl font-medium tracking-wide text-center text-indigo-950">
+          Get the Support You Need for the career You Want
+        </h1>
+      </ScrollReveal>
+
       <div className="flex flex-col justify-between w-full mx-auto mt-20 space-y-14 lg:space-y-0 lg:space-x-20 lg:max-w-7xl lg:flex-row">
         <div className="flex flex-col w-full lg:max-w-3xl">
           <h1 className="text-sm font-light leading-relaxed text-justify lg:text-base text-neutral-600">
