@@ -1,4 +1,4 @@
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 import BreadCrumb from "@/components/BreadCrumb";
 import { getSubLink } from "@/app/actions/getSublink";
@@ -8,10 +8,10 @@ import Contact from "@/components/about/Contact";
 import QuickLinks from "@/components/about/QuickLinks";
 import ImportantLinks from "@/components/about/ImportantLinks";
 
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent?: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
   // read route params
   const slug = params.slug;
 
