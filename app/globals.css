@@ -90,3 +90,11 @@
   padding:0;
   margin-right: 10px;
 }
+
+.transition-fixed-to-sticky {
+  transition: top 0.3s ease-in-out;
+}
+
+.transition-sticky-to-fixed {
+  transition: top 0.3s ease-in-out;
+}

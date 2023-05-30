@@ -50,7 +50,9 @@ const Header = () => {
   return (
     <div
       className={`z-50 items-center hidden w-full px-10 shadow-sm lg:flex h-28 ${
-        !isSticky && pathName === "/" ? "fixed top-12" : "fixed top-0 "
+        !isSticky && pathName === "/"
+          ? "fixed top-12 transition-all duration-300 ease-in-out"
+          : "fixed top-0 "
       } ${pathName === "/" && !isSticky ? "bg-transparent" : "bg-indigo-950"}`}
     >
       <div className="flex flex-2">
@@ -73,7 +75,7 @@ const Header = () => {
         <div className="flex pr-4 space-x-2">
           {links.map((link) => (
             <Link href={link.href} key={link.name}>
-              <h1 className="pr-2 text-sm text-white border-2 border-transparent hover:font-medium hover:text-blue-700 border-r-white">
+              <h1 className="pr-2 text-sm text-white border-2 border-transparent hover:font-medium hover:text-yellow-500 border-r-white">
                 {link.name}
               </h1>
             </Link>
