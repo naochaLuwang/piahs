@@ -51,7 +51,6 @@ const HomePage = async () => {
       <Facilities />
       <NewsEvents />
       <Testimonial />
-      {/* <StudentTestimonial /> */}
     </main>
   );
 };

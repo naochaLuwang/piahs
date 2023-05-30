@@ -1,11 +1,10 @@
 "use client";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Skeleton } from "@/components/ui/skeleton";
-
 import Image from "next/image";
 import CarousalButton from "../CarousalButton";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import NewsCard from "./NewsCard";
 
@@ -13,17 +12,17 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 4,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 1,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
     items: 1,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 1,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 1,
   },
 };
 
@@ -43,29 +42,33 @@ const NewsEvent = () => {
       <h1 className="mb-10 text-3xl font-medium text-center text-blue-900">
         News & Events
       </h1>
-      <Carousel
-        responsive={responsive}
-        autoPlay={true}
-        infinite={true}
-        rewindWithAnimation={true}
-        autoPlaySpeed={4000}
-        arrows={false}
-        showDots={true}
-        customButtonGroup={<CarousalButton />}
-        renderButtonGroupOutside={true}
-      >
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-      </Carousel>
-      <div className="flex justify-center w-full">
-        <div className="rounded-md w-fit px-3.5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-indigo-950 ">
-          <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-indigo-950 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-          <span className="relative text-lg transition duration-300 text-indigo-950 group-hover:text-white ease">
+      {loading ? (
+        <Skeleton width="100%" height={400} />
+      ) : (
+        <Carousel
+          responsive={responsive}
+          autoPlay={true}
+          infinite={true}
+          rewindWithAnimation={true}
+          autoPlaySpeed={4000}
+          arrows={false}
+          showDots={true}
+          customButtonGroup={<CarousalButton />}
+          renderButtonGroupOutside={true}
+          containerClass="carousel-container"
+        >
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+        </Carousel>
+      )}
+      <div className="flex justify-center w-full mt-6">
+        <Link href="/">
+          <p className="px-6 py-3 m-1 text-lg font-medium text-white rounded-md bg-indigo-950">
             Read More
-          </span>
-        </div>
+          </p>
+        </Link>
       </div>
     </div>
   );

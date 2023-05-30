@@ -1,6 +1,6 @@
 "use client";
-import Typewriter from "typewriter-effect";
-import { useState, useEffect } from "react";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const HeroPage = () => {
@@ -22,6 +22,7 @@ const HeroPage = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div
       className={`${isSticky ? "h-[80vh]" : "h-[95vh]"} w-full`}
@@ -40,20 +41,6 @@ const HeroPage = () => {
         <h1 className="hidden pb-2 mt-10 text-2xl font-semibold tracking-wider lg:block">
           Pioneering Innovation in Allied Health Science
         </h1>
-        {/* <Typewriter
-          options={{
-            strings: [
-              "Unparalleled Education",
-              "Hands-on Training",
-              "Endless Opportunities in Allied Health Science",
-            ],
-            autoStart: true,
-            loop: true,
-            wrapperClassName:
-              "text-4xl font-bold underline decoration-yellow-600 tracking-wider hidden ",
-            // cursorClassName: "text-4xl ml-2 text-yellow-600 ",
-          }}
-        /> */}
 
         <div className="flex flex-col items-center mt-5 space-x-2 lg:flex-row lg:items-start">
           <Link

@@ -14,7 +14,7 @@ const NewsCard = () => {
         />
       </div>
 
-      <div className="flex flex-col items-start w-full px-4 py-3 overflow-hidden h-36 z">
+      <div className="flex flex-col items-start w-full px-4 py-3 overflow-hidden h-36">
         <h1 className="text-sm font-medium text-center text-neutral-800">
           Lorem dior set ipsum generator
         </h1>
@@ -28,11 +28,9 @@ const NewsCard = () => {
           cursus.
         </p>
       </div>
-      <div className="absolute z-20 w-full h-auto left-4 bottom-3 ">
-        <div className="flex items-center justify-end px-2 py-1 text-white w-fit bg-neutral-800">
-          <h1 className="text-sm font-medium text-white text-end">
-            Read more{" "}
-          </h1>
+      <div className="absolute bottom-0 left-0 z-20 w-full ">
+        <div className="flex items-center justify-end px-2 py-1 text-white bg-neutral-800">
+          <h1 className="text-sm font-medium">Read more</h1>
           <BiChevronsRight />
         </div>
       </div>

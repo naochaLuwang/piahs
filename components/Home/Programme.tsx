@@ -1,7 +1,16 @@
+import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../tabs";
 import DegreeCarousel from "./DegreeCarousel";
 
-const degreeCarousal = [
+interface Degree {
+  title: string;
+  slug: string;
+  programme: string;
+  duration: number;
+  url: string;
+}
+
+const degreeCarousel: Degree[] = [
   {
     title: "Bachelor of Medical Radiographic Technology (BMRT)",
     slug: "/courses/bmrt",
@@ -32,7 +41,7 @@ const degreeCarousal = [
   },
 ];
 
-const diplomaCarousal = [
+const diplomaCarousel: Degree[] = [
   {
     title: "Diploma of Medical Radiographic Technology (DMRT)",
     slug: "/courses/dmrt",
@@ -63,7 +72,7 @@ const diplomaCarousal = [
   },
 ];
 
-const Programme = () => {
+const Programme: React.FC = () => {
   return (
     <div className="w-full h-auto px-4 py-20 bg-gray-50 lg:px-0">
       <h1 className="text-2xl font-semibold text-center text-blue-900">
@@ -71,20 +80,26 @@ const Programme = () => {
       </h1>
 
       <div className="mx-auto mt-10 max-w-7xl">
-        <Tabs defaultValue="degree" className="w-[400px]">
+        <Tabs defaultValue="degree" className="w-full">
           <TabsList>
-            <TabsTrigger value="degree" className="text-yellow-500">
+            <TabsTrigger
+              value="degree"
+              className="text-yellow-500 cursor-pointer"
+            >
               Degree Programmes
             </TabsTrigger>
-            <TabsTrigger value="diploma" className="text-yellow-500">
+            <TabsTrigger
+              value="diploma"
+              className="text-yellow-500 cursor-pointer"
+            >
               Diploma Programmes
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="degree" className="w-[88vw] mt-5 px-7 ">
-            <DegreeCarousel degrees={degreeCarousal} />
+          <TabsContent value="degree" className="w-full px-4 mt-5 sm:px-7">
+            <DegreeCarousel degrees={degreeCarousel} />
           </TabsContent>
-          <TabsContent value="diploma" className="w-[88vw] mt-5 px-7">
-            <DegreeCarousel degrees={diplomaCarousal} />
+          <TabsContent value="diploma" className="w-full px-4 mt-5 sm:px-7">
+            <DegreeCarousel degrees={diplomaCarousel} />
           </TabsContent>
         </Tabs>
       </div>

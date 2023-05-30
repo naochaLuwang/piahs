@@ -1,11 +1,8 @@
 "use client";
-
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import gsap from "gsap";
-import { motion, useMotionValue, useTransform } from "framer-motion";
-import { Slide } from "react-awesome-reveal";
 import ScrollReveal from "../ScrollReveal";
 
 interface FacilityProps {
@@ -46,23 +43,23 @@ const Facilities = () => {
     threshold: 0.1, // Adjust the threshold as needed
   });
 
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 100], [30, -30]);
-  const rotateY = useTransform(x, [-100, 100], [-30, 30]);
-  const revealDetails = () => {
-    gsap.from(".hero-detail", {
-      opacity: 0,
-      y: 100,
-      stagger: 0.2,
-      duration: 0.8,
-      ease: "power3.out",
-    });
-  };
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  if (inView) {
-    revealDetails();
-  }
+  useEffect(() => {
+    if (inView) {
+      const facilityItems =
+        containerRef.current?.querySelectorAll(".facility-item");
+      if (facilityItems) {
+        gsap.from(facilityItems, {
+          opacity: 0,
+          y: 100,
+          stagger: 0.2,
+          duration: 0.8,
+          ease: "power3.out",
+        });
+      }
+    }
+  }, [inView]);
 
   return (
     <div className="w-full h-auto px-10 py-20 bg-indigo-950" ref={ref}>
@@ -76,13 +73,13 @@ const Facilities = () => {
         Combining the best facilities and experienced faculty to provide you
         nothing short of the best
       </p>
-      <div className="grid grid-cols-1 gap-6 mt-10 lg:grid-cols-3">
+      <div
+        className="grid grid-cols-1 gap-6 mt-10 lg:grid-cols-3"
+        ref={containerRef}
+      >
         {facilities.map((facility, index) => (
-          <motion.div className="py-5 hero-detail " key={facility.title}>
-            <div
-              key={facility.title}
-              className="flex flex-col items-center space-y-3 facility-item"
-            >
+          <div className="py-5 hero-detail facility-item" key={facility.title}>
+            <div className="flex flex-col items-center space-y-3">
               <Image
                 src={facility.icon}
                 alt="library"
@@ -91,7 +88,7 @@ const Facilities = () => {
               />
               <h1 className="text-center text-white">{facility.title}</h1>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
