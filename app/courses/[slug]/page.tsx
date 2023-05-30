@@ -8,6 +8,10 @@ import Contact from "@/components/about/Contact";
 import QuickLinks from "@/components/about/QuickLinks";
 import ImportantLinks from "@/components/about/ImportantLinks";
 
+type Props = {
+  params: { slug: string };
+};
+
 export async function generateMetadata({
   params,
   searchParams,
