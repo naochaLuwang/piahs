@@ -1,4 +1,4 @@
-import React from "react";
+import { Metadata, ResolvingMetadata } from "next";
 
 import BreadCrumb from "@/components/BreadCrumb";
 import { getSubLink } from "@/app/actions/getSublink";
@@ -8,15 +8,29 @@ import Contact from "@/components/about/Contact";
 import QuickLinks from "@/components/about/QuickLinks";
 import ImportantLinks from "@/components/about/ImportantLinks";
 
-export const metadata = {
-  title: "Dynamic page",
-};
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent?: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
+  const course = await fetch(
+    `${process.env.API_URL}/api/sublinks/${slug}`
+  ).then((res) => res.json());
+
+  // optionally access and extend (rather than replace) parent metadata
+
+  return {
+    title: `${course[0].subtitle}| PIAHS`,
+  };
+}
 
 export async function generateStaticParams() {
   const response = await fetch(`${process.env.API_URL}/api/sublink/courses`);
 
   const courses = await response.json();
-  console.log(courses);
 
   return courses.map((course: Programme) => ({
     slug: course.slug,
@@ -57,5 +71,3 @@ const CoursesDynamic = async ({ params }: any) => {
 };
 
 export default CoursesDynamic;
-
-export const revalidate = 0;
