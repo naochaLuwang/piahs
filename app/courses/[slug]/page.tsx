@@ -12,6 +12,16 @@ export const metadata = {
   title: "Dynamic page",
 };
 
+// export async function generateStaticParams() {
+//   const programmes = await fetch("https://piahs.vercel.app/api/programme").then(
+//     (res) => res.json()
+//   );
+
+//   return programmes.map((programme: Programme) => ({
+//     slug: programme.slug,
+//   }));
+// }
+
 const CoursesDynamic = async ({ params }: any) => {
   const sublink: any = await getSubLink(params.slug);
 

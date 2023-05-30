@@ -14,9 +14,9 @@ const CoursePage = async () => {
   // const [programmes, setProgrammes] = useState([]);
   // const [degreeProgrammes, setDegreeProgrammes] = useState([]);
   // const [diplomaProgrammes, setDiplomaProgrammes] = useState([]);
-  const programmes = await getAllProgrammes();
-  const degreeProgrammes = await getProgrammes("degree");
-  const diplomaProgrammes = await getProgrammes("diploma");
+  // const programmes = await getAllProgrammes();
+  // const degreeProgrammes = await getProgrammes("degree");
+  // const diplomaProgrammes = await getProgrammes("diploma");
 
   // useEffect(() => {
   //   fetch(`/api/programme`)
@@ -68,13 +68,13 @@ const CoursePage = async () => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="all" className="w-full px-0 mt-5 sm:px-7">
-            <Programmes degrees={programmes} />
+            {/* <Programmes degrees={programmes} /> */}
           </TabsContent>
           <TabsContent value="degree" className="w-full px-4 mt-5 sm:px-7">
-            <Programmes degrees={degreeProgrammes} />
+            {/* <Programmes degrees={degreeProgrammes} /> */}
           </TabsContent>
           <TabsContent value="diploma" className="w-full px-4 mt-5 sm:px-7">
-            <Programmes degrees={diplomaProgrammes} />
+            {/* <Programmes degrees={diplomaProgrammes} /> */}
           </TabsContent>
         </Tabs>
       </div>
