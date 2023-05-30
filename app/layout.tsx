@@ -6,6 +6,7 @@ import { Montserrat } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 import MobileHeader from "@/components/Header/MobileHeader";
 import Social from "@/components/Header/Social";
+import ScrollToTop from "../components/ScrollTop";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} scrollbar-hide`}>
+      <body className={`${montserrat.className} scrollbar-hide relative`}>
         <Social />
         <Header />
         <MobileHeader />
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
