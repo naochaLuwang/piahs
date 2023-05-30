@@ -12,17 +12,17 @@ export const metadata = {
   title: "Dynamic page",
 };
 
-// export async function generateStaticParams() {
-//   const response = await fetch(`${process.env.API_URL}/api/sublink/courses`);
+export async function generateStaticParams() {
+  const response = await fetch(`${process.env.API_URL}/api/sublink/courses`);
 
-//   const courses = await response.json();
-//   console.log(courses);
+  const courses = await response.json();
+  console.log(courses);
 
-//   return courses.map((course: Programme) => ({
-//     slug: course.slug,
-//   }));
-//   // return console.log()
-// }
+  return courses.map((course: Programme) => ({
+    slug: course.slug,
+  }));
+  // return console.log()
+}
 
 const CoursesDynamic = async ({ params }: any) => {
   const sublink: any = await getSubLink(params.slug);
@@ -57,3 +57,5 @@ const CoursesDynamic = async ({ params }: any) => {
 };
 
 export default CoursesDynamic;
+
+export const revalidate = 0;
