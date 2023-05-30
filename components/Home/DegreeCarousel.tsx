@@ -15,7 +15,7 @@ interface Degree {
 }
 
 interface DegreeCarouselProps {
-  degrees: Degree[];
+  degrees: any;
 }
 
 const responsive = {
@@ -62,7 +62,7 @@ const DegreeCarousel: React.FC<DegreeCarouselProps> = ({ degrees }) => {
           customButtonGroup={<CarousalButton />}
           renderButtonGroupOutside={true}
         >
-          {degrees.map((degree) => (
+          {degrees.map((degree: any) => (
             <div
               key={degree.title}
               className="flex flex-col items-center w-full px-4 py-10 mb-10 mr-2 bg-white border rounded-lg shadow-md sm:w-72"

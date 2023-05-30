@@ -43,7 +43,7 @@ const NewsEvent = () => {
         News & Events
       </h1>
       {loading ? (
-        <Skeleton width="100%" height={400} />
+        <Skeleton className="w-full h-96" />
       ) : (
         <Carousel
           responsive={responsive}
