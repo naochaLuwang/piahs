@@ -7,15 +7,8 @@ import CarousalButton from "../CarousalButton";
 import Image from "next/image";
 import Link from "next/link";
 
-interface Degree {
-  title: string;
-  programme: string;
-  duration: string;
-  slug: string;
-}
-
 interface DegreeCarouselProps {
-  degrees: any;
+  degrees: Programme[];
 }
 
 const responsive = {
@@ -62,21 +55,21 @@ const DegreeCarousel: React.FC<DegreeCarouselProps> = ({ degrees }) => {
           customButtonGroup={<CarousalButton />}
           renderButtonGroupOutside={true}
         >
-          {degrees.map((degree: any) => (
+          {degrees.map((degree: Programme) => (
             <div
-              key={degree.title}
+              key={degree.programmeName}
               className="flex flex-col items-center w-full px-4 py-10 mb-10 mr-2 bg-white border rounded-lg shadow-md sm:w-72"
             >
               <h1 className="h-24 text-lg font-semibold text-center text-blue-700">
-                {degree.title}
+                {degree.programmeName}
               </h1>
-              <p className="mt-2 font-medium text-neutral-400">
-                {degree.programme} Programme
+              <p className="mt-2 font-medium capitalize text-neutral-400">
+                {degree.programmeType} Programme
               </p>
               <div className="w-12 h-1 mt-2 bg-yellow-600"></div>
 
               <p className="mt-5 font-medium text-neutral-500">
-                Duration: {degree.duration} years
+                Duration: {degree.programmeDuration} years
               </p>
               <div className="w-48 h-[2px] bg-gray-200"></div>
               <div className="flex flex-col items-center mt-2 font-medium text-neutral-400">

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import {
   Tabs,
   TabsContent,
@@ -6,67 +7,34 @@ import {
   TabsTrigger,
 } from "../../components/tabs";
 import Programmes from "../../components/programmes/Programmes";
-
-const degreeCarousel: any = [
-  {
-    title: "Bachelor of Medical Radiographic Technology (BMRT)",
-    slug: "/courses/bmrt",
-    programme: "Degree",
-    duration: 3,
-    url: "/brt.jpeg",
-  },
-  {
-    title: "Bachelor of Medical Laboratory Technician (BMLT)",
-    slug: "/courses/bmrt",
-    programme: "Degree",
-    duration: 3,
-    url: "/blt.jpeg",
-  },
-  {
-    title: "Bachelor of Physiotherapy (BPT)",
-    slug: "/courses/bpt",
-    programme: "Degree",
-    duration: 3,
-    url: "/physio1.webp",
-  },
-  {
-    title: "Lateral Entry - Bachelor of Physiotherapy",
-    slug: "/courses/bpt_lateral",
-    programme: "Degree",
-    duration: 3,
-    url: "/physio2.jpeg",
-  },
-  {
-    title: "Bachelor of Medical Radiographic Technology (BMRT)",
-    slug: "/courses/bmrt",
-    programme: "Degree",
-    duration: 3,
-    url: "/brt.jpeg",
-  },
-  {
-    title: "Bachelor of Medical Laboratory Technician (BMLT)",
-    slug: "/courses/bmrt",
-    programme: "Degree",
-    duration: 3,
-    url: "/blt.jpeg",
-  },
-  {
-    title: "Bachelor of Physiotherapy (BPT)",
-    slug: "/courses/bpt",
-    programme: "Degree",
-    duration: 3,
-    url: "/physio1.webp",
-  },
-  {
-    title: "Lateral Entry - Bachelor of Physiotherapy",
-    slug: "/courses/bpt_lateral",
-    programme: "Degree",
-    duration: 3,
-    url: "/physio2.jpeg",
-  },
-];
+import { getAllProgrammes } from "../actions/getAllProgrammes";
+import { getProgrammes } from "../actions/getProgrammes";
 
 const CoursePage = () => {
+  const [programmes, setProgrammes] = useState([]);
+  const [degreeProgrammes, setDegreeProgrammes] = useState([]);
+  const [diplomaProgrammes, setDiplomaProgrammes] = useState([]);
+
+  useEffect(() => {
+    fetch(`/api/programme`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProgrammes(data);
+      });
+    fetch(`/api/programme/degree`)
+      .then((res) => res.json())
+      .then((data) => {
+        setDegreeProgrammes(data);
+      });
+    fetch(`/api/programme/diploma`)
+      .then((res) => res.json())
+      .then((data) => {
+        setDiplomaProgrammes(data);
+      });
+  }, []);
+
+  console.log(programmes);
+
   return (
     <div className="flex flex-col w-full py-16">
       <div className="flex flex-col items-center">
@@ -80,30 +48,30 @@ const CoursePage = () => {
       <div className="w-full mt-10">
         <Tabs defaultValue="all" className="w-full">
           <TabsList>
-            <TabsTrigger value="all" className="text-blue-900 cursor-pointer">
+            <TabsTrigger value="all" className="text-blue-800 cursor-pointer">
               All Programmes
             </TabsTrigger>
             <TabsTrigger
               value="degree"
-              className="text-yellow-500 cursor-pointer"
+              className="text-blue-800 cursor-pointer"
             >
               Degree Programmes
             </TabsTrigger>
             <TabsTrigger
               value="diploma"
-              className="text-yellow-500 cursor-pointer"
+              className="text-blue-800 cursor-pointer"
             >
               Diploma Programmes
             </TabsTrigger>
           </TabsList>
           <TabsContent value="all" className="w-full px-0 mt-5 sm:px-7">
-            <Programmes degrees={degreeCarousel} />
+            <Programmes degrees={programmes} />
           </TabsContent>
           <TabsContent value="degree" className="w-full px-4 mt-5 sm:px-7">
-            <Programmes degrees={degreeCarousel} />
+            <Programmes degrees={degreeProgrammes} />
           </TabsContent>
           <TabsContent value="diploma" className="w-full px-4 mt-5 sm:px-7">
-            <Programmes degrees={degreeCarousel} />
+            <Programmes degrees={diplomaProgrammes} />
           </TabsContent>
         </Tabs>
       </div>

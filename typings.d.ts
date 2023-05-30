@@ -1,59 +1,75 @@
 interface LinkProps {
-    isMulti: string;
-    id: string;
-    title: string;
-    slug: string;
-    order: number;
-    status: "ACTIVE" | "INACTIVE";
-    pageType: "dynamic" | "static";
-    userId: string;
-    content: string;
-    createdAt: string;
-    updatedAt: string;
-    sublinks: SubLinkProps[];
-    user: User;
+  isMulti: string;
+  id: string;
+  title: string;
+  slug: string;
+  order: number;
+  status: "ACTIVE" | "INACTIVE";
+  pageType: "dynamic" | "static";
+  userId: string;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
+  sublinks: SubLinkProps[];
+  user: User;
 }
 
 interface SubLinkProps {
-    id: string;
-    linkId: string;
-    userId: string;
-    title: string;
-    subtitle:string;
-    slug: string;
-    order: number;
-    status: "ACTIVE" | "INACTIVE";
-    content: string;
-    pageType: "static" | "dynamic";
-    createdAt: string;
-    updatedAt: string;
-    Subsublinks: SubsubLinkProps[];
-    user: User;
-    link: LinkProps;
+  id: string;
+  linkId: string;
+  userId: string;
+  title: string;
+  subtitle: string;
+  slug: string;
+  order: number;
+  status: "ACTIVE" | "INACTIVE";
+  content: string;
+  pageType: "static" | "dynamic";
+  createdAt: string;
+  updatedAt: string;
+  Subsublinks: SubsubLinkProps[];
+  user: User;
+  link: LinkProps;
 }
 
 interface SubsubLinkProps {
-    id: string;
-    sublinkId: string;
-    userId: string;
-    title: string;
-    slug: string;
-    order: number;
-    status: "ACTIVE" | "INACTIVE";
-    content: string;
-    pageType: "static" | "dynamic";
-    createdAt: string;
-    updatedAt: string;
-    user: User;
-    subLinks: SubLinkProps;
+  id: string;
+  sublinkId: string;
+  userId: string;
+  title: string;
+  slug: string;
+  order: number;
+  status: "ACTIVE" | "INACTIVE";
+  content: string;
+  pageType: "static" | "dynamic";
+  createdAt: string;
+  updatedAt: string;
+  user: User;
+  subLinks: SubLinkProps;
 }
 
 interface User {
-    id: string;
-    email: string;
-    name: string;
-    emailVerified: boolean;
-    hashedPassword: string;
-    createdAt: string;
-    updatedAt: string;
+  id: string;
+  email: string;
+  name: string;
+  emailVerified: boolean;
+  hashedPassword: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface Programme {
+  id: string;
+  slug: string;
+  programmeName: string;
+  programmeCode: string;
+  programmeType: string;
+  programmeDuration: string;
+  minQualification: string;
+  order: number;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string;
 }
