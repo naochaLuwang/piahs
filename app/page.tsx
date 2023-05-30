@@ -19,8 +19,8 @@ export const metadata = {
 };
 
 const HomePage = async () => {
-  // const degreeCarousel = await getProgrammes("degree");
-  // const diplomaCarousel = await getProgrammes("diploma");
+  const degreeCarousel = await getProgrammes("degree");
+  const diplomaCarousel = await getProgrammes("diploma");
   return (
     <main className="overflow-hidden">
       <HeroPage />
@@ -30,10 +30,10 @@ const HomePage = async () => {
       <Banner title="Pratiksha Institute of Allied Health Sciences is" />
 
       <ApplyNow />
-      {/* <Programme
+      <Programme
         degreeCarousel={degreeCarousel}
         diplomaCarousel={diplomaCarousel}
-      /> */}
+      />
 
       <Facilities />
       <NewsEvents />

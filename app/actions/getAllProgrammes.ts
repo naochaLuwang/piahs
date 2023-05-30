@@ -1,6 +1,6 @@
 export async function getAllProgrammes() {
   const response: Response = await fetch(
-    `${process.env.API_URL}/api/programme`,
+    `https://piahs.vercel.app/api/programme`,
     {
       cache: "no-cache",
     }

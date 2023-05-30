@@ -1,4 +1,6 @@
 export async function getProgrammes(slug: string) {
-  const response = await fetch(`${process.env.API_URL}/api/programme/${slug}`);
+  const response = await fetch(
+    `https://piahs.vercel.app/api/programme/${slug}`
+  );
   return response.json();
 }
