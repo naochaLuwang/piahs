@@ -10,7 +10,9 @@ export async function GET(request: Request, { params }: { params: IParams }) {
   console.log(slug);
   const sublink = await prisma.sublinks.findMany({
     where: {
-      linkId: slug,
+      link: {
+        slug: slug,
+      },
     },
   });
 
