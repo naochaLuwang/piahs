@@ -149,7 +149,7 @@ const MobileHeader = () => {
                         ) : (
                           <Link
                             href={link.slug}
-                            onClick={() => toggleSublinks(link.id)}
+                            onClick={() => setIsOpen(false)}
                           >
                             {link.title}
                           </Link>
@@ -170,7 +170,10 @@ const MobileHeader = () => {
                                   animate={{ opacity: 1 }}
                                   exit={{ opacity: 0 }}
                                 >
-                                  <Link href={`${link.slug}/${sublink.slug}`}>
+                                  <Link
+                                    href={`${link.slug}/${sublink.slug}`}
+                                    onClick={() => setIsOpen(false)}
+                                  >
                                     <p>{sublink.title}</p>
                                   </Link>
                                 </motion.li>
