@@ -106,7 +106,7 @@ export default function Navbar() {
                   </NavigationMenuItem>
                 ) : (
                   <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
+                    <Link href={navlink.slug} legacyBehavior passHref>
                       <NavigationMenuLink
                         className={`${navigationMenuTriggerStyle()} ${
                           isSticky ? "text-neutral-800" : "text-white"
