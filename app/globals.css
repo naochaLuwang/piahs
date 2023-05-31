@@ -98,3 +98,18 @@
 .transition-sticky-to-fixed {
   transition: top 0.3s ease-in-out;
 }
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.open {
+  transition: all 0.3s ease;
+  /* Add any other styles you want when the slide is open */
+}
+
+.closed {
+  transition: all 0.3s ease;
+  /* Add any other styles you want when the slide is closed */
+}
+
