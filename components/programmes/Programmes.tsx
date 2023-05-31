@@ -1,11 +1,8 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
-
+import React, { useEffect, useRef } from "react";
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import "react-multi-carousel/lib/styles.css";
-
 import Link from "next/link";
 
 interface DegreeCarouselProps {
@@ -32,12 +29,16 @@ const Programmes: React.FC<DegreeCarouselProps> = ({ degrees }) => {
       });
     }
   }, []);
+
   return (
-    <div ref={containerRef} className="grid grid-cols-4 gap-3">
+    <div
+      ref={containerRef}
+      className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+    >
       {degrees.map((degree: Programme) => (
         <div
           key={degree.programmeName}
-          className="flex flex-col items-center w-full px-4 py-10 mb-10 mr-2 bg-white border rounded-lg shadow-md sm:w-72"
+          className="flex flex-col items-center w-full px-4 py-10 mb-10 bg-white border rounded-lg shadow-md"
           style={{
             transform: "scale(1)",
             transition: "transform 0.3s",
@@ -115,12 +116,6 @@ const Programmes: React.FC<DegreeCarouselProps> = ({ degrees }) => {
           </div>
         </div>
       ))}
-      {/* ) : (
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-        {[...Array(4)].map((_, index) => (
-          <Skeleton key={index} className="w-full h-[29rem]" />
-        ))}
-      </div> */}
     </div>
   );
 };

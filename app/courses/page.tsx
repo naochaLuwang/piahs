@@ -19,29 +19,32 @@ const CoursePage = async () => {
 
   return (
     <div className="flex flex-col w-full py-16">
-      <div className="flex flex-col items-center">
-        <h1 className="max-w-lg text-3xl font-babas text-indigo-950">
+      <div className="flex flex-col items-center w-full">
+        <h1 className="max-w-lg text-xl text-center lg:text-3xl font-babas text-indigo-950">
           Programmes offered at
         </h1>
-        <h1 className="mt-2 text-3xl font-babas text-indigo-950">
+        <h1 className="mt-2 text-xl text-center lg:text-3xl font-babas text-indigo-950">
           Pratiksha Institute of Allied Health Science
         </h1>
       </div>
       <div className="w-full mt-10">
         <Tabs defaultValue="all" className="w-full">
-          <TabsList>
-            <TabsTrigger value="all" className="text-blue-800 cursor-pointer">
+          <TabsList className="flex flex-wrap items-center justify-center w-full mb-20 ml-0 bg-white lg:ml-5 lg:bg-blue-50 lg:mb-0 lg:w-fit">
+            <TabsTrigger
+              value="all"
+              className="w-full cursor-pointer text-neutral-500 sm:w-auto"
+            >
               All Programmes
             </TabsTrigger>
             <TabsTrigger
               value="degree"
-              className="text-blue-800 cursor-pointer"
+              className="w-full cursor-pointer text-neutral-500 sm:w-auto"
             >
               Degree Programmes
             </TabsTrigger>
             <TabsTrigger
               value="diploma"
-              className="text-blue-800 cursor-pointer"
+              className="w-full cursor-pointer text-neutral-500 sm:w-auto"
             >
               Diploma Programmes
             </TabsTrigger>
