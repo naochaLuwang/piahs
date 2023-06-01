@@ -4,7 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Skeleton } from "@/components/ui/skeleton";
 import CarousalButton from "../CarousalButton";
-import Image from "next/image";
+
 import Link from "next/link";
 
 interface DegreeCarouselProps {

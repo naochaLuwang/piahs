@@ -7,6 +7,7 @@ import Image from "next/image";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import ImageButton from "../ImageButton";
 
 const responsive = {
   desktop: {
@@ -47,15 +48,12 @@ const ImageCarousal = ({ carousalImages }: any) => {
             infinite={false}
             rewindWithAnimation={true}
             autoPlaySpeed={10000}
-            arrows={true}
-            showDots={true}
-            // customTransition="transform 3000 ease-in-out"
-            // transitionDuration={3000}
-            // partialVisbile={true}
-            //   customLeftArrow={<CustomLeftArrow />}
-            //   customRightArrow={<CustomRightArrow />}
+            arrows={false}
+            showDots={false}
+            customButtonGroup={<ImageButton />}
+            renderButtonGroupOutside={true}
           >
-            {carousalImages.map((image: any) => (
+            {carousalImages.map((image: any, index: any) => (
               <div
                 key={image.title}
                 className="relative w-full lg:h-[60vh] h-96    mb-10"
@@ -67,6 +65,16 @@ const ImageCarousal = ({ carousalImages }: any) => {
                   priority={true}
                   style={{ objectFit: "fill" }}
                 />
+                <p className="absolute right-0 z-50 -bottom-10 text-neutral-500">
+                  <span className="text-base text-blue-950 font-babas">
+                    {index + 1}
+                  </span>{" "}
+                  out of{" "}
+                  <span className="text-base text-blue-950 font-babas">
+                    {carousalImages.length}
+                  </span>{" "}
+                  images
+                </p>
               </div>
             ))}
           </Carousel>

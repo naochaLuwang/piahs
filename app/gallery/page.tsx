@@ -46,7 +46,7 @@ const AlbumPage = () => {
   }
 
   return (
-    <div className="flex flex-col w-full h-screen px-10 py-10 mt-32">
+    <div className="flex flex-col w-full h-screen px-10 py-5 mt-32">
       <h1 className="text-2xl font-babas text-blue-950">Photo Gallery</h1>
       <div className="grid grid-cols-4 gap-4 mt-10">
         {albums &&
@@ -63,14 +63,12 @@ const AlbumPage = () => {
       {selectedAlbum && (
         <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-screen transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
           <div className="absolute inset-0 w-full h-screen bg-black opacity-50"></div>
-          <div className="z-10 p-4 bg-white max-w-7xl">
-            <h2 className="mb-4 text-lg font-semibold">
-              {selectedAlbum.title}
-            </h2>
+          <div className="relative z-10 p-4 bg-white max-w-7xl rounded-xl">
+            <h2 className="mb-4 text-xl font-babas">{selectedAlbum.title}</h2>
             <ImageCarousal carousalImages={selectedAlbum.images} />
 
             <button
-              className="px-4 py-2 mt-4 text-white bg-blue-500 rounded"
+              className="px-4 py-2 mt-2 text-white rounded bg-indigo-950 "
               onClick={handleCloseModal}
             >
               Close

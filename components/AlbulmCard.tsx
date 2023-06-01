@@ -22,17 +22,15 @@ const AlbulmCard: React.FC<AlbulmCardProps> = ({
   };
 
   return (
-    <div
-      className="flex flex-col items-center w-64 h-64 px-10 py-2 space-y-4 bg-blue-100 rounded-md shadow-md group"
-      onClick={handleCardClick}
-    >
+    <div className="flex flex-col items-center w-64 h-64 px-10 py-2 space-y-4 bg-blue-100 rounded-md shadow-md cursor-pointer group">
       <div className="relative h-48 border-2 w-60">
         <Image
           src={image}
           alt=""
           fill
           style={{ objectFit: "fill" }}
-          onClick={(e) => e.stopPropagation()}
+          onClick={handleCardClick}
+          // onClick={(e) => e.stopPropagation()}
         />
       </div>
       <div className="flex flex-col items-center justify-center">
