@@ -219,3 +219,15 @@ model Programme {
     createdBy         String
     updatedBy         String
 }
+
+model Testimonial {
+    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    name      String
+    sub       String
+    status    String
+    order     Int
+    testimony String
+    imageUrl  String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}

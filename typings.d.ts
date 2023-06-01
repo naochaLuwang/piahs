@@ -91,3 +91,14 @@ interface ImageProps {
   albulmId: string;
   imageUrl: string;
 }
+
+interface TestimonialProps {
+  id: string;
+  name: string;
+  sub: string;
+  imageUrl: string;
+  status: "ACTIVE" | "INACTIVE";
+  order: number;
+  createdAt: string;
+  updatedAt: string;
+}
