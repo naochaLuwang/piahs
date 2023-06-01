@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { getAllAlbulms } from "../actions/getAllAlbum.ts";
+import { getAllAlbulms } from "../actions/getAllAlbum";
 import AlbulmCard from "../../components/AlbulmCard";
 import Link from "next/link";
 import ImageCarousal from "../../components/Home/Carousal";
@@ -9,20 +9,20 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const AlbumPage = () => {
   const [albums, setAlbums] = useState<AlbumProps[]>([]);
-  const [selectedAlbum, setSelectedAlbum] = useState<AlbumProps>(null);
-  const [isLoading, setIsLoading] = useState<Boolean>(false);
+  const [selectedAlbum, setSelectedAlbum] = useState<AlbumProps | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     setIsLoading(true);
     fetch(`/api/albulm`)
       .then((res) => res.json())
-      .then((data) => {
+      .then((data: AlbumProps[]) => {
         setAlbums(data);
         setIsLoading(false);
       });
   }, []);
 
-  const handleAlbumClick = (album) => {
+  const handleAlbumClick = (album: AlbumProps) => {
     setSelectedAlbum(album);
   };
 
