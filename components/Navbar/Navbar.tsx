@@ -55,7 +55,19 @@ export default function Navbar() {
 
   if (isLoading)
     return (
-      <div className="z-50 hidden w-full h-10 pl-5 bg-transparent lg:block lg:fixed top-28"></div>
+      <div
+        className={`z-50 w-full h-10 pl-5 bg-transparent hidden lg:block  ${
+          isSticky
+            ? " sticky top-28 transition-all duration-75 ease-in-out"
+            : " lg:fixed top-28"
+        } ${
+          pathName == "/" && !isSticky
+            ? "bg-yellow-500 bg-opacity-90  top-40"
+            : "bg-yellow-500 bg-opacity-90"
+        }`}
+      >
+        <div className="z-50 hidden w-full h-10 pl-5 bg-transparent lg:block lg:fixed top-28"></div>
+      </div>
     );
 
   return (
