@@ -66,7 +66,7 @@ export default function Navbar() {
           : " lg:fixed top-28"
       } ${
         pathName == "/" && !isSticky
-          ? "bg-transparent top-40"
+          ? "bg-yellow-500 bg-opacity-90  top-40"
           : "bg-yellow-500 bg-opacity-90"
       }`}
     >
@@ -79,7 +79,7 @@ export default function Navbar() {
                   <NavigationMenuItem>
                     <NavigationMenuTrigger
                       className={`${
-                        isSticky ? "text-neutral-800" : "text-white"
+                        isSticky ? "text-neutral-800" : "text-neutral-800"
                       }`}
                     >
                       {navlink.title}
@@ -109,7 +109,7 @@ export default function Navbar() {
                     <Link href={navlink.slug} legacyBehavior passHref>
                       <NavigationMenuLink
                         className={`${navigationMenuTriggerStyle()} ${
-                          isSticky ? "text-neutral-800" : "text-white"
+                          isSticky ? "text-neutral-800" : "text-neutral-800"
                         }`}
                       >
                         {navlink.title}
