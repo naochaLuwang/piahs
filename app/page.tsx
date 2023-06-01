@@ -22,9 +22,9 @@ export const metadata = {
 const HomePage = async () => {
   const degreeCarousel = await getProgrammes("degree");
   const diplomaCarousel = await getProgrammes("diploma");
-  const testimonials = await getAllTestimonials();
+  // const testimonials = await getAllTestimonials();
 
-  console.log(testimonials);
+  // console.log(testimonials);
 
   return (
     <main className="overflow-hidden">
