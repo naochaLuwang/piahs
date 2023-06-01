@@ -29,16 +29,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const response = await fetch(`${process.env.API_URL}/api/sublink/courses`);
+  const response = await fetch(`${process.env.API_URL}/api/sublink/facilities`);
 
-  const courses = await response.json();
+  const facilities = await response.json();
 
-  return courses.map((course: Programme) => ({
-    slug: course.slug,
+  return facilities.map((facility: any) => ({
+    slug: facility.slug,
   }));
 }
 
-const CoursesDynamic = async ({ params }: any) => {
+const FacilityDynamic = async ({ params }: any) => {
   const sublink: any = await getSubLink(params.slug);
 
   return (
@@ -46,11 +46,11 @@ const CoursesDynamic = async ({ params }: any) => {
       <div className="flex flex-col h-auto px-4 md:w-2/3 md:px-0 lg:w-full">
         <BreadCrumb
           home={"Home"}
-          link={"Courses"}
+          link={"Facilities"}
           sublink={sublink[0]?.title}
         />
         <h1 className="mt-5 text-2xl font-medium tracking-wider text-blue-800">
-          {sublink[0]?.subtitle}
+          {sublink[0]?.title}
         </h1>
         <div className="w-full">
           <MyEditor content={sublink[0]?.content} />
@@ -78,4 +78,4 @@ const CoursesDynamic = async ({ params }: any) => {
   );
 };
 
-export default CoursesDynamic;
+export default FacilityDynamic;
