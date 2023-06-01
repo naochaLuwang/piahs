@@ -7,10 +7,36 @@ import MyEditor from "@/components/Editor";
 import Contact from "@/components/about/Contact";
 import QuickLinks from "@/components/about/QuickLinks";
 import ImportantLinks from "@/components/about/ImportantLinks";
-
-export const metadata = {
-  title: "Dynamic page",
+import { Metadata } from "next";
+type Props = {
+  params: { slug: string };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
+  const about = await fetch(`${process.env.API_URL}/api/sublinks/${slug}`).then(
+    (res) => res.json()
+  );
+
+  // optionally access and extend (rather than replace) parent metadata
+
+  return {
+    title: `${about[0].title}| PIAHS`,
+  };
+}
+
+export async function generateStaticParams() {
+  const response = await fetch(`${process.env.API_URL}/api/sublink/about`);
+
+  const courses = await response.json();
+
+  return courses.map((course: Programme) => ({
+    slug: course.slug,
+  }));
+}
 
 const DynamicPage = async ({ params }: any) => {
   const sublink: any = await getSubLink(params.slug);
