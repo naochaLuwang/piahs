@@ -13,6 +13,7 @@ import Whychooseus from "../components/Home/WhyChooseUs";
 import HeroPage from "@/components/HeroPage";
 import ScrollReveal from "../components/ScrollReveal";
 import { getProgrammes } from "./actions/getProgrammes";
+import { getAllTestimonials } from "./actions/getAllTestimonial";
 
 export const metadata = {
   title: "PRATIKSHA INSTITUTE OF ALLIED HEALTH SCIENCE",
@@ -21,6 +22,10 @@ export const metadata = {
 const HomePage = async () => {
   const degreeCarousel = await getProgrammes("degree");
   const diplomaCarousel = await getProgrammes("diploma");
+  const testimonials = await getAllTestimonials();
+
+  console.log(testimonials);
+
   return (
     <main className="overflow-hidden">
       <HeroPage />
