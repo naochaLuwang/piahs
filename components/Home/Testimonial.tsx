@@ -23,7 +23,11 @@ const responsive = {
   },
 };
 
-const Testimonial = () => {
+interface TestProps {
+  testimonials: TestimonialProps[];
+}
+
+const Testimonial: React.FC<TestProps> = ({ testimonials }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -47,9 +51,16 @@ const Testimonial = () => {
             arrows={false}
             showDots={true}
           >
-            <TestimonialCard />
-            <TestimonialCard />
-            <TestimonialCard />
+            {testimonials &&
+              testimonials.map((testimonial: TestimonialProps) => (
+                <TestimonialCard
+                  key={testimonial.id}
+                  testimonial={testimonial}
+                />
+              ))}
+
+            {/* <TestimonialCard />
+            <TestimonialCard /> */}
           </Carousel>
         ) : (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">

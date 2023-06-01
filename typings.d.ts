@@ -97,6 +97,7 @@ interface TestimonialProps {
   name: string;
   sub: string;
   imageUrl: string;
+  testimony: string;
   status: "ACTIVE" | "INACTIVE";
   order: number;
   createdAt: string;
