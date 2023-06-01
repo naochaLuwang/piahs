@@ -4,9 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import Image from "next/image";
-// import urlFor from "@/lib/urlFor";
-// import CustomLeftArrow from "./CustomLeftArrow";
-// import CustomRightArrow from "./CustomRightArrow";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -28,7 +26,7 @@ const responsive = {
   },
 };
 
-const HomeCarousal = ({ carousalImages }: any) => {
+const ImageCarousal = ({ carousalImages }: any) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,31 +40,11 @@ const HomeCarousal = ({ carousalImages }: any) => {
   return (
     <>
       {!loading ? (
-        <div className="relative w-full">
-          <div className="absolute z-20 w-full text-center lg:top-20 top-36">
-            <div className="flex flex-col items-center space-y-2">
-              <h1 className="text-xl font-bold tracking-wide text-white lg:text-3xl">
-                WELCOME TO PIAHS
-              </h1>
-              <div className="flex space-x-2">
-                <Link href="/">
-                  <p className="px-2 py-1 text-sm font-medium bg-yellow-400 rounded-md lg:text-lg hover:bg-yellow-500 text-neutral-800 w-fit">
-                    Online Admission
-                  </p>
-                </Link>
-                <Link href="/">
-                  <p className="px-2 py-1 text-sm font-medium bg-white rounded-md lg:text-lg w-fit">
-                    View Courses
-                  </p>
-                </Link>
-              </div>
-            </div>
-          </div>
-
+        <div className="relative w-[50rem] ">
           <Carousel
             responsive={responsive}
-            autoPlay={true}
-            infinite={true}
+            autoPlay={false}
+            infinite={false}
             rewindWithAnimation={true}
             autoPlaySpeed={10000}
             arrows={true}
@@ -80,10 +58,10 @@ const HomeCarousal = ({ carousalImages }: any) => {
             {carousalImages.map((image: any) => (
               <div
                 key={image.title}
-                className="relative w-full lg:h-[82vh] h-96  lg:mt-10 mt-32"
+                className="relative w-full lg:h-[60vh] h-96    mb-10"
               >
                 <Image
-                  src={image.url}
+                  src={image.imageUrl}
                   fill
                   alt="banner Image"
                   priority={true}
@@ -100,4 +78,4 @@ const HomeCarousal = ({ carousalImages }: any) => {
   );
 };
 
-export default HomeCarousal;
+export default ImageCarousal;

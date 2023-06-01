@@ -73,3 +73,21 @@ interface Programme {
   createdBy: string;
   updatedBy: string;
 }
+
+interface AlbumProps {
+  id: string;
+  userId: string;
+  title: string;
+  thumbnailImage: string;
+  status: "ACTIVE" | "INACTIVE";
+  order: number;
+  createdAt: string;
+  updatedAt: string;
+  images: ImageProps[];
+}
+
+interface ImageProps {
+  id: string;
+  albulmId: string;
+  imageUrl: string;
+}
