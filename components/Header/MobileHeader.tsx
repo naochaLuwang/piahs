@@ -88,7 +88,7 @@ const MobileHeader = () => {
     transition: "transform 0.3s ease-in-out",
     transform: isOpen ? "translateX(0)" : "translateX(100%)",
     overflowY: "auto",
-    maxHeight: "70vh",
+    maxHeight: "100vh",
   };
 
   return (
@@ -98,7 +98,7 @@ const MobileHeader = () => {
           <Image src="/PIAHS_logon.png" alt="logo" fill />
         </div>
         <div className="flex flex-col space-y-1">
-          <h1 className="text-sm font-medium text-white font-babas">
+          <h1 className="text-base font-[700] text-white font-babas">
             PRATIKSHA INSTITUTE OF
             <br /> ALLIED HEALTH SCIENCE
           </h1>
