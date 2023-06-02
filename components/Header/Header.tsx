@@ -10,18 +10,22 @@ const links = [
   {
     name: "News & Events",
     href: "/",
+    target: "_parent",
   },
   {
     name: "Online Apply",
     href: "/",
+    target: "_blank",
   },
   {
     name: "Get In touch",
-    href: "/",
+    href: "/contact",
+    target: "_parent",
   },
   {
     name: "Results",
     href: "/",
+    target: "_parent",
   },
 ];
 
@@ -74,7 +78,7 @@ const Header = () => {
 
         <div className="flex pr-4 space-x-2">
           {links.map((link) => (
-            <Link href={link.href} key={link.name}>
+            <Link href={link.href} key={link.name} target={link.target}>
               <h1 className="pr-2 text-sm text-white border-2 border-transparent hover:font-medium hover:text-yellow-500 border-r-white">
                 {link.name}
               </h1>
