@@ -14,7 +14,7 @@ const links = [
   },
   {
     name: "Online Apply",
-    href: "/",
+    href: "http://apply.pratiksha-edu.in/login-user-start?key=9/sWIR83IeQVFPVMtnG+Pg==&sessionID=468d6d5c-24bb-4c37-a96b-ddf28a0b01ce",
     target: "_blank",
   },
   {
