@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/pfavicon.png",
+    icon: "/favicon.png",
   },
   title: "Gallery | PIAHS",
 };
