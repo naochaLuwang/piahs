@@ -93,7 +93,7 @@ const MobileHeader = () => {
 
   return (
     <div className="fixed top-0 z-50 flex flex-col w-full h-32 pt-3 overflow-hidden shadow-sm bg-indigo-950 lg:hidden">
-      <div className="flex w-full px-2 space-x-3">
+      <div className="flex justify-between w-full px-2">
         <div className="relative flex-shrink-0 w-20 h-20 bg-white rounded-xl">
           <Image src="/PIAHS_logon.png" alt="logo" fill />
         </div>
