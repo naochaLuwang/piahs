@@ -9,7 +9,7 @@ interface BreadCrumbProps {
 
 const BreadCrumb: React.FC<BreadCrumbProps> = ({ home, link, sublink }) => {
   return (
-    <div className="flex flex-wrap items-center mt-5 space-x-2 text-sm font-medium tracking-wide">
+    <div className="flex flex-wrap items-center mt-5 ml-2 space-x-2 text-sm font-medium tracking-wide lg:ml-0">
       <Link href={"/"}>
         <h1 className="text-blue-600">{home}</h1>
       </Link>

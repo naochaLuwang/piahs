@@ -8,24 +8,6 @@ const DynamicReactQuill = dynamic(() => import("react-quill"), {
   ssr: false,
 });
 
-// const modules = {
-//   toolbar: [
-//     [{ font: [] }],
-//     [{ header: [1, 2, 3, 4, 5, 6, false] }],
-//     ["bold", "italic", "underline", "strike"],
-//     [{ color: [] }, { background: [] }],
-//     [{ script: "sub" }, { script: "super" }],
-//     ["blockquote", "code-block"],
-//     [{ list: "ordered" }, { list: "bullet" }],
-//     [{ indent: "-1" }, { indent: "+1" }, { align: [] }],
-//     ["link", "image", "video"],
-//     ["clean"],
-//   ],
-//   clipboard: {
-//     matchVisual: false,
-//   },
-// };
-
 const modules = {
   toolbar: false,
 };
@@ -53,7 +35,7 @@ const formats = [
 
 export function MyEditor({ onChange, content }: any) {
   return (
-    <div className="w-full h-auto -ml-4">
+    <div className="w-full h-auto lg:-ml-4">
       {/* Render the dynamic ReactQuill component */}
 
       <DynamicReactQuill

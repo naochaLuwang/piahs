@@ -49,7 +49,7 @@ const CoursesDynamic = async ({ params }: any) => {
           link={"Courses"}
           sublink={sublink[0]?.title}
         />
-        <h1 className="mt-5 text-2xl font-medium tracking-wider text-blue-800">
+        <h1 className="mt-5 ml-3 text-lg font-medium tracking-wider text-blue-800 lg:ml-0 lg:text-2xl">
           {sublink[0]?.subtitle}
         </h1>
         <div className="w-full">

@@ -42,10 +42,10 @@ const DynamicPage = async ({ params }: any) => {
   const sublink: any = await getSubLink(params.slug);
 
   return (
-    <div className="flex flex-col w-full md:flex-row">
-      <div className="flex flex-col h-auto px-4 md:w-2/3 md:px-0 lg:w-full">
+    <div className="flex flex-col w-full px-4 md:flex-row lg:px-10">
+      <div className="flex flex-col w-full h-auto ">
         <BreadCrumb home={"Home"} link={"About"} sublink={sublink[0]?.title} />
-        <h1 className="mt-5 text-2xl font-medium tracking-wider text-blue-800">
+        <h1 className="mt-5 ml-2 text-2xl font-medium tracking-wider text-blue-800 lg:ml-0">
           {sublink[0]?.title}
         </h1>
         <div className="w-full">

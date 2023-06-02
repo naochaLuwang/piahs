@@ -90,7 +90,7 @@
   outline: none !important;
   box-shadow: none !important;
   padding:0;
-  margin-right: 5px;
+  margin-right: 0px;
 }
 
 .transition-fixed-to-sticky {

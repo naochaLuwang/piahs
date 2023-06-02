@@ -58,7 +58,7 @@ export default function Navbar() {
       <div
         className={`z-50 w-full h-10 pl-5 bg-transparent hidden lg:block  ${
           isSticky
-            ? " sticky top-28 transition-all duration-75 ease-in-out"
+            ? " sticky top-28 transition-all duration-100 ease-linear"
             : " lg:fixed top-28"
         } ${
           pathName == "/" && !isSticky

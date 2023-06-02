@@ -61,7 +61,7 @@ const AlbumPage = () => {
           ))}
       </div>
       {selectedAlbum && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-screen transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+        <div className="inset-0 z-50 items-center justify-center hidden w-full h-screen transform -translate-x-1/2 -translate-y-1/2 lg:flex lg:fixed top-1/2 left-1/2">
           <div className="absolute inset-0 w-full h-screen bg-black opacity-50"></div>
           <div className="relative z-10 p-4 bg-white max-w-7xl rounded-xl">
             <h2 className="mb-4 text-xl font-babas">{selectedAlbum.title}</h2>
