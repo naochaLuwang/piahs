@@ -16,6 +16,9 @@ import { getProgrammes } from "./actions/getProgrammes";
 import { getAllTestimonials } from "./actions/getAllTestimonial";
 
 export const metadata = {
+  icons: {
+    icon: "/pfavicon.png",
+  },
   title: "PRATIKSHA INSTITUTE OF ALLIED HEALTH SCIENCE",
 };
 
