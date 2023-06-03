@@ -14,6 +14,7 @@ import HeroPage from "@/components/HeroPage";
 import ScrollReveal from "../components/ScrollReveal";
 import { getProgrammes } from "./actions/getProgrammes";
 import { getAllTestimonials } from "./actions/getAllTestimonial";
+import Popup from "@/components/Popup";
 
 export const metadata = {
   icons: {
@@ -44,6 +45,7 @@ const HomePage = async () => {
       <Facilities />
       <NewsEvents />
       <Testimonial testimonials={testimonials} />
+      {/* <Popup /> */}
     </main>
   );
 };

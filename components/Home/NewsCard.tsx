@@ -18,7 +18,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ imageUrl, title }) => {
         />
       </div>
 
-      <h1 className="px-4 py-3 text-lg font-oswald font-[700] text-blue-950">
+      <h1 className="px-4 pt-2 text-base font-semibold text-blue-950 line-clamp-4">
         {title}
       </h1>
 
