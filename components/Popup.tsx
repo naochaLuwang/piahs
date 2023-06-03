@@ -16,12 +16,13 @@ const Popup: React.FC = () => {
   useEffect(() => {
     const hasVisitedHomepage = sessionStorage.getItem("visitedHomepage");
 
+    if (pathName === "/" && hasVisitedHomepage) {
+      setShowPopup(false);
+    }
     if (pathName === "/" && !hasVisitedHomepage) {
       setShowPopup(true);
       localStorage.setItem("visitedHomepage", "true");
       document.body.classList.add("no-scroll");
-    } else if (pathName === "/" && hasVisitedHomePage) {
-      setShowPopup(false);
     }
 
     return () => {
