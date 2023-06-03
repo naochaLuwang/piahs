@@ -82,7 +82,7 @@ export const TestimonialButton = ({ next, previous, ...rest }: any) => {
     carouselState: { currentSlide },
   } = rest;
   return (
-    <div className="absolute right-0 flex items-center justify-center w-full mt-2 lg:justify-end -bottom-5 lg:top-3 carousel-button-group">
+    <div className="absolute right-0 flex items-center justify-center w-full mt-10 lg:top-0 top-14 lg:justify-end carousel-button-group">
       <div
         className={currentSlide === 0 ? "disable" : "cursor-pointer"}
         onClick={() => previous()}
