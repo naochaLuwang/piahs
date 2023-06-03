@@ -58,7 +58,7 @@ const NewsEvent = () => {
 
   return (
     <div className="w-full h-auto py-20 px-14 lg:px-28">
-      <h1 className="mb-10 text-3xl font-babas tracking-wide font-[700] text-center text-blue-900">
+      <h1 className="mb-10 text-3xl font-semibold tracking-wide text-center text-indigo-950">
         News & Events
       </h1>
       {loading ? (

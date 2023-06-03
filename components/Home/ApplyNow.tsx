@@ -52,7 +52,7 @@ const ApplyNow = () => {
 
       <div className="flex flex-col justify-between w-full mx-auto mt-20 space-y-14 lg:space-y-0 lg:space-x-20 lg:max-w-7xl lg:flex-row">
         <div className="flex flex-col w-full lg:max-w-3xl">
-          <h1 className="text-sm font-light leading-relaxed text-justify lg:text-base text-neutral-600 apply-text">
+          <h1 className="ml-2 text-sm font-medium leading-relaxed text-justify lg:text-base text-neutral-500 apply-text">
             Pratiksha Institute of Allied Health Sciences is offering Masters,
             Bachelor, and Diploma courses in the field of Hospital
             Administration, Medical Laboratory Technology, Physiotherapy,
@@ -62,8 +62,8 @@ const ApplyNow = () => {
             industry-ready individuals who will be able to function in a variety
             of settings.
           </h1>
-          <Link href="/">
-            <div className="rounded-md w-fit px-3.5 py-2 m-2 overflow-hidden relative group cursor-pointer border-2 font-medium border-blue-950 apply-button">
+          <Link href="/" className="mt-2">
+            <div className="rounded-md w-fit px-3.5  py-2 m-2 overflow-hidden relative group cursor-pointer border-2 font-medium border-blue-950 apply-button">
               <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-blue-950 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
               <span className="relative text-base font-medium transition duration-300 text-blue-950 group-hover:text-white ease">
                 Click here to apply
@@ -74,7 +74,7 @@ const ApplyNow = () => {
         <div className="relative apply-image">
           <div className="h-64 w-96 bg-blue-950">
             <Image
-              src="/apply.jpeg"
+              src="/broucher.jpeg"
               alt=""
               width={400}
               height={600}

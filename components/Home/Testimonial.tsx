@@ -38,7 +38,7 @@ const Testimonial: React.FC<TestProps> = ({ testimonials }) => {
   return (
     <div className="w-full h-auto px-6 py-20 bg-gray-100 lg:px-0">
       <div className="relative py-5 mx-auto max-w-7xl">
-        <h1 className="mb-10 text-4xl font-semibold tracking-wider text-center text-yellow-600 font-babas">
+        <h1 className="mb-10 text-3xl font-semibold tracking-wider text-center text-indigo-950">
           Feedback from our Students
         </h1>
 

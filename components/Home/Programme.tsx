@@ -13,7 +13,7 @@ const Programme: React.FC<ProgrammeProps> = ({
 }) => {
   return (
     <div className="w-full h-auto px-4 py-20 bg-gray-50 lg:px-0">
-      <h1 className="text-2xl font-semibold text-center text-blue-900">
+      <h1 className="text-2xl font-semibold text-center text-indigo-950">
         FIND THE RIGHT PROGRAMME FOR YOU
       </h1>
 

@@ -77,20 +77,19 @@ const Header = () => {
         </div>
 
         <div className="flex pr-4 space-x-5">
-          {links.map((link) => (
+          {links.map((link, index) => (
             <Link href={link.href} key={link.name} target={link.target}>
-              <h1 className="pr-4 text-sm text-white border-2 border-transparent hover:font-medium hover:text-yellow-500 border-r-white">
+              <h1
+                className={`pr-4 text-sm text-white ${
+                  index === links.length - 1 ? "border-r-0" : "border-r-white"
+                } border-2 border-transparent hover:font-medium hover:text-yellow-500`}
+              >
                 {link.name}
               </h1>
             </Link>
           ))}
         </div>
       </div>
-      {/* <div className="absolute right-0 flex-1 bg-red-200">
-        <div className="flex flex-col items-end py-2 ">
-          
-        </div>
-      </div> */}
     </div>
   );
 };
