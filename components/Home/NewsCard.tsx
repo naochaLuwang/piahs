@@ -1,37 +1,33 @@
 import Image from "next/image";
-import { BiChevronsRight } from "react-icons/bi";
+import React from "react";
 
-const NewsCard = () => {
+interface NewsCardProps {
+  imageUrl?: string;
+  title: string;
+}
+
+const NewsCard: React.FC<NewsCardProps> = ({ imageUrl, title }) => {
   return (
-    <div className="relative flex flex-col items-center w-full mb-10 mr-2 bg-white border rounded-lg shadow-xl lg:mx-2 h-96 sm:w-72">
-      <div className="relative w-full rounded-t-lg h-44">
+    <div className="w-full relative mb-10 mr-2 bg-white border rounded-lg shadow-xl lg:mx-2 h-[27rem] sm:w-72">
+      <div className="relative h-44 w-72">
         <Image
-          src="/blt.jpeg"
-          alt=""
+          src="/apply.jpeg"
+          alt="news"
           fill
-          className="rounded-t-lg"
           style={{ objectFit: "fill" }}
         />
       </div>
 
-      <div className="flex flex-col items-start w-full px-4 py-3 overflow-hidden h-36">
-        <h1 className="text-sm font-medium text-center text-neutral-800">
-          Lorem dior set ipsum generator
-        </h1>
-        <p className="mt-3 text-xs">
-          Nulla non vestibulum urna. Mauris at iaculis nisi, eget venenatis
-          dolor. Etiam efficitur nisi arcu, a convallis lectus ultricies vel.
-          Maecenas sagittis convallis fringilla. Aenean pretium lacus velit,
-          pellentesque aliquam velit ultrices eu. Etiam egestas odio et massa
-          semper ullamcorper at sed tortor. Donec pellentesque tincidunt justo,
-          vel feugiat nulla euismod hendrerit. Cras id odio id turpis cursus
-          cursus.
-        </p>
-      </div>
-      <div className="absolute bottom-0 left-0 z-20 w-full ">
-        <div className="flex items-center justify-end px-2 py-1 text-white bg-neutral-800">
-          <h1 className="text-sm font-medium">Read more</h1>
-          <BiChevronsRight />
+      <h1 className="px-4 py-3 text-lg font-oswald font-[700] text-blue-950">
+        {title}
+      </h1>
+
+      <div className="absolute bottom-0 w-full left-1">
+        <div className="rounded-md  px-3.5 py-2 m-2 overflow-hidden relative group cursor-pointer border-2 font-medium border-blue-950 text-blue-950 w-fit">
+          <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-blue-950 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+          <span className="relative text-base font-medium transition duration-300 text-blue-950 group-hover:text-white ease">
+            Read More
+          </span>
         </div>
       </div>
     </div>

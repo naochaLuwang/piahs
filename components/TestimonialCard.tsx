@@ -8,11 +8,11 @@ interface TestiProps {
 
 const TestimonialCard: React.FC<TestiProps> = ({ testimonial }) => {
   return (
-    <div className="relative w-full mb-10 h-96">
-      <div className="flex space-x-2">
+    <div className="relative w-full px-4 py-5 mb-10 border h-[28rem]  shadow-md  rounded-xl bg-white">
+      <div className="flex space-x-3">
         <div className="flex flex-col w-40 py-5 mr-2 lg:w-56">
           <FaQuoteLeft className="text-2xl text-neutral-500" />
-          <p className="mt-2 text-xs font-medium tracking-wide text-justify lg:text-sm">
+          <p className="mt-2 text-xs font-medium tracking-wide text-justify lg:text-sm text-neutral-600">
             {testimonial.testimony}
           </p>
           <div className="absolute flex flex-col border-0 border-t-2 border-blue-400 bottom-5">
@@ -22,14 +22,15 @@ const TestimonialCard: React.FC<TestiProps> = ({ testimonial }) => {
             <p className="text-sm text-neutral-600">{testimonial.sub}</p>
           </div>
         </div>
-        <div className="relative h-56 mt-3 ml-2 bg-blue-300 rounded-md w-44">
-          <div className="absolute top-1 right-1">
-            <div className="relative h-56 w-44">
+        <div className="relative w-40 pl-5 mt-10 bg-blue-300 rounded-md h-52">
+          <div className="absolute right-0 top-2">
+            <div className="relative w-40 rounded-md h-52">
               <Image
                 src={testimonial.imageUrl}
                 alt="profile"
                 fill
                 style={{ objectFit: "cover" }}
+                className="rounded-md"
               />
             </div>
           </div>

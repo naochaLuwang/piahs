@@ -26,7 +26,7 @@ const ContactPage = () => {
   }, []);
 
   return (
-    <div className="w-full h-auto py-20 mt-32">
+    <div className="w-full h-auto py-20 mt-40">
       <h1 className="text-4xl tracking-wider text-center font-babas">
         Contact Us
       </h1>

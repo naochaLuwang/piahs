@@ -2,7 +2,7 @@ import React from "react";
 
 const PeoplePage = () => {
   return (
-    <div className="w-full h-screen py-10 mt-32">
+    <div className="w-full h-screen py-10 mt-40">
       <h1>People Page</h1>
     </div>
   );

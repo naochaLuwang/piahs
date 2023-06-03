@@ -58,11 +58,11 @@ export default function Navbar() {
       <div
         className={`z-50 w-full h-10 pl-5 bg-transparent hidden lg:block  ${
           isSticky
-            ? " sticky top-28 transition-all duration-100 ease-linear"
-            : " lg:fixed top-28"
+            ? " sticky top-40 transition-all duration-100 ease-linear"
+            : " lg:fixed top-40"
         } ${
           pathName == "/" && !isSticky
-            ? "bg-yellow-500 bg-opacity-90  top-40"
+            ? "bg-yellow-500 bg-opacity-90  top-52"
             : "bg-yellow-500 bg-opacity-90"
         }`}
       >
@@ -74,11 +74,11 @@ export default function Navbar() {
     <div
       className={`z-50 w-full h-10 pl-5 bg-transparent hidden lg:block  ${
         isSticky
-          ? " sticky top-28 transition-all duration-75 ease-in-out"
-          : " lg:fixed top-28"
+          ? " sticky top-40 transition-all duration-75 ease-in-out"
+          : " lg:fixed top-40"
       } ${
         pathName == "/" && !isSticky
-          ? "bg-yellow-500 bg-opacity-90  top-40"
+          ? "bg-yellow-500 bg-opacity-90  top-52"
           : "bg-yellow-500 bg-opacity-90"
       }`}
     >
