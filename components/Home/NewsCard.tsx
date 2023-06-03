@@ -13,7 +13,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
   description,
 }) => {
   return (
-    <div className="w-full relative mb-10 mr-2 bg-white border rounded-lg shadow-xl lg:mx-2 h-[27rem] sm:w-72">
+    <div className="w-full relative mb-10  bg-white border rounded-lg shadow-md lg:mx-2 h-[27rem] sm:w-72">
       <div className="relative bg-white border h-44 w-72">
         <Image
           src="/PIAHS_logon.png"

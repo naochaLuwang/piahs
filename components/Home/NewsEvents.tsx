@@ -85,7 +85,7 @@ const NewsEvent = () => {
           containerClass="carousel-container"
         >
           {news.map((item, index) => (
-            <div key={index}>
+            <div key={index} className="w-full">
               <NewsCard title={item.title} description={item.description} />
             </div>
           ))}
