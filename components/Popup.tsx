@@ -20,6 +20,8 @@ const Popup: React.FC = () => {
       setShowPopup(true);
       localStorage.setItem("visitedHomepage", "true");
       document.body.classList.add("no-scroll");
+    } else if (pathName === "/" && hasVisitedHomePage) {
+      setShowPopup(false);
     }
 
     return () => {

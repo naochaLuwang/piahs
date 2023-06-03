@@ -45,7 +45,7 @@ const HomePage = async () => {
       <Facilities />
       <NewsEvents />
       <Testimonial testimonials={testimonials} />
-      {/* <Popup /> */}
+      <Popup />
     </main>
   );
 };
