@@ -231,3 +231,18 @@ model Testimonial {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
+
+model News {
+    id          String   @id @default(auto()) @map("_id") @db.ObjectId
+    title       String
+    subtitle    String?
+    description String
+    thumbnail   String?
+    slug        String   @unique
+    status      String
+    order       Int
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+    createdBy   String
+    updatedBy   String
+}

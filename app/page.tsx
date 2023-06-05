@@ -1,5 +1,3 @@
-import React from "react";
-
 import Banner from "@/components/Home/Banner";
 import ApplyNow from "@/components/Home/ApplyNow";
 import Programme from "@/components/Home/Programme";
@@ -11,10 +9,11 @@ import Testimonial from "@/components/Home/Testimonial";
 import Whychooseus from "../components/Home/WhyChooseUs";
 
 import HeroPage from "@/components/HeroPage";
-import ScrollReveal from "../components/ScrollReveal";
+
 import { getProgrammes } from "./actions/getProgrammes";
 import { getAllTestimonials } from "./actions/getAllTestimonial";
-import Popup from "@/components/Popup";
+
+// metadata component
 
 export const metadata = {
   icons: {

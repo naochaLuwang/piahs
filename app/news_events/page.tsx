@@ -1,11 +1,11 @@
 import React from "react";
 
-const PeoplePage = () => {
+const NewsEvents = () => {
   return (
     <div className="w-full h-screen py-10 mt-40">
-      <h1>Faculties</h1>
+      <h1>NewsEvents</h1>
     </div>
   );
 };
 
-export default PeoplePage;
+export default NewsEvents;
