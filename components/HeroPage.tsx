@@ -35,7 +35,7 @@ const HeroPage = () => {
       }}
     >
       <div className="flex flex-col justify-center h-full px-10 text-white">
-        <h1 className="font-medium tracking-wide text-center text-md lg:text-start">
+        <h1 className="font-medium tracking-wide text-center text-md lg:text-start lg:mt-20">
           Welcome to Pratiksha Institute of Allied Health Science
         </h1>
         <h1 className="hidden pb-2 mt-10 text-2xl font-semibold tracking-wider lg:block">

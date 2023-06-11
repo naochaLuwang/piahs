@@ -28,7 +28,9 @@ export default function RootLayout({
         <MobileHeader />
 
         <Navbar />
-        {children}
+        <div className="flex flex-col w-full overflow-hidden h-fit ">
+          {children}
+        </div>
         <Footer />
         <ScrollToTop />
       </body>

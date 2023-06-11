@@ -17,7 +17,7 @@ const Social = () => {
   const pathname = usePathname();
   return (
     <div
-      className={` items-center hidden lg:flex justify-between w-full h-12 px-10 py-1 bg-indigo-950 ${
+      className={` items-center hidden lg:flex justify-between w-full h-12 px-10 py-1 bg-gradient-to-r from-indigo-800 to-indigo-950 ${
         pathname == "/" ? "block" : "hidden"
       }`}
     >
@@ -43,15 +43,15 @@ const Social = () => {
       </div>
       <div className="flex items-center space-x-5">
         <div className="flex items-center space-x-2">
-          <HiMail className="w-8 h-8 text-white" />
+          <HiMail className="w-6 h-6 text-white" />
           <Link href={`mailto:pratikshaiahs@gmail.com`}>
-            <p className="text-white">pratikshaiahs@gmail.com</p>
+            <p className="text-sm text-white">pratikshaiahs@gmail.com</p>
           </Link>
         </div>
         <div className="flex items-center space-x-2">
           <BsFillPhoneFill className="w-6 h-6 text-white" />
 
-          <p className="text-white">90851-22 222</p>
+          <p className="text-sm text-white">90851-22 222</p>
         </div>
       </div>
     </div>

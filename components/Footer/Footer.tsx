@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { FaFacebookSquare } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <footer className={"w-full lg:h-96 h-auto bg-blue-950 px-10 py-10"}>
-      <div className={"grid lg:grid-cols-4 grid-cols-2 w-full gap-6 "}>
+    <footer className={"w-full lg:h-96 h-auto bg-blue-950  py-10"}>
+      <div className={"grid lg:grid-cols-4 grid-cols-2 w-full gap-6 px-10 "}>
         <div className={"flex flex-col col-span-2"}>
           <h1 className={"text-yellow-500 tracking-wide text-lg font-semibold"}>
             PRATIKSHA INSTITUTE OF ALLIED HEALTH SCIENCE
@@ -57,6 +58,25 @@ const Footer = () => {
               <RiInstagramFill className="text-3xl" />
             </div>
           </div>
+        </div>
+      </div>
+      <div className="w-full h-10 px-10 mt-10 ">
+        <div className="flex items-center justify-start w-full h-full">
+          <h1 className="text-sm text-white">
+            Copyright &copy; 2023{" "}
+            <Link href="/" className="text-yellow-500">
+              PIAHS.
+            </Link>{" "}
+            Designed by{" "}
+            <Link
+              href="https://relyhealthtech.com"
+              target="_blank"
+              className="text-yellow-500"
+            >
+              Rely Healthcare Technologies
+            </Link>{" "}
+            . All rights reserved.
+          </h1>
         </div>
       </div>
     </footer>

@@ -53,11 +53,15 @@ const Header = () => {
   }, []);
   return (
     <div
-      className={`z-50 items-center hidden w-full px-10 shadow-sm lg:flex h-40  py-8 ${
+      className={`z-50 items-center hidden w-full px-10 shadow-sm lg:flex h-32  py-8 ${
         !isSticky && pathName === "/"
           ? "fixed top-12 transition-all duration-300 ease-in-out"
           : "fixed top-0 "
-      } ${pathName === "/" && !isSticky ? "bg-transparent" : "bg-indigo-950"}`}
+      } ${
+        pathName === "/" && !isSticky
+          ? "bg-transparent"
+          : "bg-gradient-to-tr from-indigo-900 to-indigo-950"
+      }`}
     >
       <div className="flex flex-2">
         <Logo imageUrl="/PIAHS_logon.png" />
@@ -76,7 +80,7 @@ const Header = () => {
           />
         </div>
 
-        <div className="flex pr-4 space-x-5">
+        <div className="flex pb-2 pr-4 space-x-5 h-14">
           {links.map((link, index) => (
             <Link href={link.href} key={link.name} target={link.target}>
               <h1

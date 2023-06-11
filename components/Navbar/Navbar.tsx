@@ -58,12 +58,12 @@ export default function Navbar() {
       <div
         className={`z-50 w-full h-10 pl-5 bg-transparent hidden lg:block  ${
           isSticky
-            ? " sticky top-40 transition-all duration-100 ease-linear"
-            : " lg:fixed top-40"
+            ? " sticky top-32 transition-all duration-100 ease-linear"
+            : " lg:fixed "
         } ${
           pathName == "/" && !isSticky
-            ? "bg-yellow-500 bg-opacity-90  top-52"
-            : "bg-yellow-500 bg-opacity-90"
+            ? "bg-yellow-500 bg-opacity-60  top-44"
+            : "bg-yellow-500 bg-opacity-60 top-32"
         }`}
       >
         <div className="z-50 hidden w-full h-10 pl-5 bg-transparent lg:block lg:fixed top-28"></div>
@@ -74,12 +74,12 @@ export default function Navbar() {
     <div
       className={`z-50 w-full h-10 pl-5 bg-transparent hidden lg:block  ${
         isSticky
-          ? " sticky top-40 transition-all duration-75 ease-in-out"
-          : " lg:fixed top-40"
+          ? " sticky top-32 transition-all duration-75 ease-in-out"
+          : " lg:fixed"
       } ${
         pathName == "/" && !isSticky
-          ? "bg-yellow-500 bg-opacity-90  top-52"
-          : "bg-yellow-500 bg-opacity-90"
+          ? "bg-yellow-500 bg-opacity-70  top-44"
+          : "bg-yellow-500 bg-opacity-90 top-32"
       }`}
     >
       <NavigationMenu>

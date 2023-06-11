@@ -93,12 +93,12 @@ const MobileHeader = () => {
 
   return (
     <div className="fixed top-0 z-50 flex flex-col w-full h-32 pt-3 overflow-hidden shadow-sm bg-indigo-950 lg:hidden">
-      <div className="flex justify-between w-full px-2">
+      <div className="flex w-full px-2 space-x-2">
         <div className="relative flex-shrink-0 w-20 h-20 bg-white rounded-xl">
           <Image src="/PIAHS_logon.png" alt="logo" fill />
         </div>
         <div className="flex flex-col space-y-1">
-          <h1 className="text-base font-[700] text-white font-babas">
+          <h1 className="text-sm font-[700] text-white font-babas">
             PRATIKSHA INSTITUTE OF
             <br /> ALLIED HEALTH SCIENCE
           </h1>
@@ -108,7 +108,7 @@ const MobileHeader = () => {
         </div>
         <div className="">
           <div
-            className={`px-4 py-2 font-semibold text-white rounded ${
+            className={`pr-4 py-2 font-semibold text-white rounded ${
               isOpen ? "open" : "closed"
             }`}
             onClick={toggleSlide}
