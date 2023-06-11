@@ -62,7 +62,10 @@ const Facilities = () => {
   }, [inView]);
 
   return (
-    <div className="w-full h-auto px-10 py-20 bg-indigo-950" ref={ref}>
+    <div
+      className="w-full h-auto px-10 py-20 from-indigo-800 bg-gradient-to-tr to-indigo-950"
+      ref={ref}
+    >
       <ScrollReveal>
         <h1 className="text-2xl font-semibold tracking-wider text-center text-white">
           Our Facilities

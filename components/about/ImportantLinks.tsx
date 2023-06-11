@@ -4,7 +4,7 @@ import { MdLink } from "react-icons/md";
 const ImportantLinks = () => {
   return (
     <div className="flex flex-col h-auto shadow-lg rounded-xl w-96">
-      <h1 className="w-full px-4 py-4 text-lg font-medium text-yellow-500 bg-blue-950 rounded-t-md">
+      <h1 className="w-full px-4 py-4 text-lg font-medium text-yellow-500 bg-gradient-to-br from-indigo-800 to-indigo-950 rounded-t-md">
         Important Links
       </h1>
       <div className="flex flex-col w-full h-auto py-5 pb-10 space-y-4 font-medium bg-gray-100">

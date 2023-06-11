@@ -8,7 +8,7 @@ interface BannerProps {
 
 const Banner: React.FC<BannerProps> = ({ title }) => {
   return (
-    <div className="flex flex-col items-center w-full px-8 py-20 space-y-2 bg-indigo-950 h-72 lg:h-auto lg:px-0">
+    <div className="flex flex-col items-center w-full px-8 py-20 space-y-2 bg-gradient-to-bl from-indigo-800 to-indigo-950 h-72 lg:h-auto lg:px-0">
       <ScrollReveal>
         <h1 className="text-base font-semibold tracking-wide text-center text-white lg:text-3xl">
           {title}

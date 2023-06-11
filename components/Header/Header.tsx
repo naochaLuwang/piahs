@@ -80,7 +80,7 @@ const Header = () => {
           />
         </div>
 
-        <div className="flex pb-2 pr-4 space-x-5 h-14">
+        <div className="flex h-12 pr-4 space-x-5">
           {links.map((link, index) => (
             <Link href={link.href} key={link.name} target={link.target}>
               <h1
