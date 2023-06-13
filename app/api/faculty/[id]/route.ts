@@ -12,6 +12,10 @@ export async function GET(request: Request, { params }: { params: IParams }) {
     where: {
       id: id,
     },
+    include: {
+      department: true,
+      designation: true,
+    },
   });
 
   return NextResponse.json(faculty);
