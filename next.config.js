@@ -9,6 +9,12 @@ const nextConfig = {
         port: "",
         pathname: "/naocha/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.wallpaperuse.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

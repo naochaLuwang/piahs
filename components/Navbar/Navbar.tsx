@@ -85,52 +85,54 @@ export default function Navbar() {
       <NavigationMenu>
         <NavigationMenuList>
           {data !== null &&
-            data.map((navlink: LinkProps) => (
-              <div key={navlink.id}>
-                {navlink.sublinks.length > 0 ? (
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger
-                      className={`${
-                        isSticky ? "text-neutral-800" : "text-neutral-800"
-                      }`}
-                    >
-                      {navlink.title}
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul
-                        className={`grid w-[400px] gap-3 p-4 ${
-                          navlink.isMulti === "YES"
-                            ? "w-[800px] md:grid-cols-2"
-                            : "grid-cols-1 md:w-[400px]"
-                        }   `}
-                      >
-                        {navlink.sublinks.map((component: SubLinkProps) => (
-                          <ListItem
-                            key={component.title}
-                            title={component.title}
-                            href={`${navlink.slug}/${component.slug}`}
-                          >
-                            {component.subtitle}
-                          </ListItem>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                ) : (
-                  <NavigationMenuItem>
-                    <Link href={navlink.slug}>
-                      <NavigationMenuLink
-                        className={`${navigationMenuTriggerStyle()} ${
+            data
+              .sort((a: any, b: any) => a.order - b.order)
+              .map((navlink: LinkProps) => (
+                <div key={navlink.id}>
+                  {navlink.sublinks.length > 0 ? (
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger
+                        className={`${
                           isSticky ? "text-neutral-800" : "text-neutral-800"
                         }`}
                       >
                         {navlink.title}
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                )}
-              </div>
-            ))}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul
+                          className={`grid w-[400px] gap-3 p-4 ${
+                            navlink.isMulti === "YES"
+                              ? "w-[800px] md:grid-cols-2"
+                              : "grid-cols-1 md:w-[400px]"
+                          }   `}
+                        >
+                          {navlink.sublinks.map((component: SubLinkProps) => (
+                            <ListItem
+                              key={component.title}
+                              title={component.title}
+                              href={`${navlink.slug}/${component.slug}`}
+                            >
+                              {component.subtitle}
+                            </ListItem>
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  ) : (
+                    <NavigationMenuItem>
+                      <Link href={navlink.slug}>
+                        <NavigationMenuLink
+                          className={`${navigationMenuTriggerStyle()} ${
+                            isSticky ? "text-neutral-800" : "text-neutral-800"
+                          }`}
+                        >
+                          {navlink.title}
+                        </NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                  )}
+                </div>
+              ))}
         </NavigationMenuList>
       </NavigationMenu>
     </div>
