@@ -6,8 +6,43 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { getFaculty } from "@/app/actions/getFaculty";
+import MyEditor from "@/components/Editor";
+import { Metadata } from "next";
 
-const PeopleDetail = () => {
+type Props = {
+  params: { slug: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
+  const faculty = await fetch(
+    `${process.env.API_URL}/api/faculty/${slug}`
+  ).then((res) => res.json());
+
+  // optionally access and extend (rather than replace) parent metadata
+
+  return {
+    title: `${faculty.firstName} ${faculty.lastName}| PIAHS`,
+  };
+}
+
+export async function generateStaticParams() {
+  const response = await fetch(`${process.env.API_URL}/api/faculty`);
+
+  const faculties = await response.json();
+
+  return faculties.map((faculty: FacultyProps) => ({
+    slug: faculty.slug,
+  }));
+}
+
+const PeopleDetail = async ({ params }: any) => {
+  const faculty: FacultyProps = await getFaculty(params.slug);
+
   return (
     <div className="w-full h-auto py-20">
       <div className="relative w-full h-56">
@@ -23,15 +58,20 @@ const PeopleDetail = () => {
         >
           <div className="flex items-center w-full h-full mx-auto space-x-5 max-w-7xl ">
             <div className="relative w-40 h-40 rounded-md">
-              <Image src={"/fplace.jpeg"} alt="" fill className="rounded-md" />
+              <Image
+                src={faculty.profileUrl}
+                alt=""
+                fill
+                className="rounded-md"
+              />
             </div>
 
             <div className="flex flex-col justify-start h-full mt-24 space-y-2 ">
               <h1 className="text-3xl font-babas text-indigo-950">
-                Dr. Anika Patels
+                {`${faculty.firstName} ${faculty.lastName}`}
               </h1>
-              <p className="text-base">Professor</p>
-              <p>Department of Physiotherapy</p>
+              <p className="text-base">{faculty.designation.designationName}</p>
+              <p>Department of {faculty.department.departmentName}</p>
             </div>
           </div>
         </div>
@@ -44,7 +84,9 @@ const PeopleDetail = () => {
               Qualifications
             </AccordionTrigger>
             <AccordionContent className="pt-2 text-sm font-medium leading-loose text-neutral-600">
-              Yes. It adheres to the WAI-ARIA design pattern.
+              <div className="pl-4">
+                <MyEditor content={faculty.qualification} />
+              </div>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -52,15 +94,9 @@ const PeopleDetail = () => {
               Research Interest
             </AccordionTrigger>
             <AccordionContent className="pt-2 text-sm font-medium leading-loose text-neutral-600">
-              Dr. Anika Patels research interests revolve around the
-              intersection of health sciences and technology. She is
-              particularly interested in exploring how innovative technological
-              solutions can enhance healthcare delivery and patient outcomes.
-              Her research focuses on areas such as telehealth, wearable
-              devices, electronic health records, and health informatics.
-              Through her research, Dr. Patel aims to contribute to the
-              advancement of healthcare practices and improve the overall
-              quality of patient care.
+              <div className="pl-5">
+                <MyEditor content={faculty.research} />
+              </div>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
@@ -68,8 +104,9 @@ const PeopleDetail = () => {
               Working Experience
             </AccordionTrigger>
             <AccordionContent className="pt-2 text-sm font-medium leading-loose text-neutral-600">
-              Yes. Its animated by default, but you can disable it if you
-              prefer.
+              <div className="pl-5">
+                <MyEditor content={faculty.experience} />
+              </div>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
@@ -77,17 +114,19 @@ const PeopleDetail = () => {
               Research & Publications
             </AccordionTrigger>
             <AccordionContent className="pt-2 text-sm font-medium leading-loose text-neutral-600">
-              Yes. Its animated by default, but you can disable it if you
-              prefer.
+              <div className="pl-5">
+                <MyEditor content={faculty.publications} />
+              </div>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5" className="hover:no-underline ">
             <AccordionTrigger className="px-4 text-white hover:no-underline bg-gradient-to-tr from-indigo-700 to-indigo-950">
-              Personal Interest
+              Other Achievements
             </AccordionTrigger>
             <AccordionContent className="pt-2 text-sm font-medium leading-loose text-neutral-600">
-              Yes. Its animated by default, but you can disable it if you
-              prefer.
+              <div className="pl-5">
+                <MyEditor content={faculty.achievements} />
+              </div>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
