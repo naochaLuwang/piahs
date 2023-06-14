@@ -44,7 +44,7 @@ const PeopleDetail = async ({ params }: any) => {
   const faculty: FacultyProps = await getFaculty(params.slug);
 
   return (
-    <div className="w-full h-auto py-20">
+    <div className="w-full h-auto py-0 pt-16 lg:py-20">
       <div className="relative w-full h-56">
         <div
           className="absolute inset-0 bg-opacity-25"
@@ -56,7 +56,7 @@ const PeopleDetail = async ({ params }: any) => {
           //   zIndex: "-1",
           // }}
         >
-          <div className="flex items-center w-full h-full mx-auto space-x-5 max-w-7xl ">
+          <div className="flex flex-col items-start w-full h-auto px-4 lg:px-0 lg:items-center lg:mx-auto lg:space-x-5 lg:flex-row lg:max-w-7xl ">
             <div className="relative w-40 h-40 rounded-md">
               <Image
                 src={faculty.profileUrl}
@@ -66,7 +66,7 @@ const PeopleDetail = async ({ params }: any) => {
               />
             </div>
 
-            <div className="flex flex-col justify-start h-full mt-24 space-y-2 ">
+            <div className="flex flex-col justify-start h-auto space-y-1 ">
               <h1 className="text-3xl font-babas text-indigo-950">
                 {`${faculty.firstName} ${faculty.lastName}`}
               </h1>
@@ -77,7 +77,7 @@ const PeopleDetail = async ({ params }: any) => {
         </div>
         {/* Content of the div */}
       </div>
-      <div className="w-full mx-auto mt-10 max-w-7xl">
+      <div className="w-full px-4 mx-auto mt-10 lg:max-w-7xl lg:px-0">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="px-4 text-white hover:no-underline bg-gradient-to-tr from-indigo-700 to-indigo-950">

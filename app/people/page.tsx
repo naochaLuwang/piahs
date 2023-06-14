@@ -6,11 +6,11 @@ import { getAllFaculty } from "../actions/getAllFaculty";
 const PeoplePage = async () => {
   const faculties = await getAllFaculty();
   return (
-    <div className="w-full h-screen py-10 mx-auto max-w-7xl">
-      <h1 className="text-3xl font-semibold tracking-wide font-oswald text-indigo-950">
+    <div className="w-full h-screen px-8 py-10 lg:mx-auto lg:max-w-7xl lg:px-0">
+      <h1 className="text-2xl font-semibold tracking-wide lg:text-3xl font-oswald text-indigo-950">
         Our Faculties
       </h1>
-      <div className="grid grid-cols-4 gap-6 mt-10">
+      <div className="grid grid-cols-1 gap-6 mt-10 lg:grid-cols-4">
         {faculties &&
           faculties.map((faculty: FacultyProps, index: any) => (
             <div
