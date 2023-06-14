@@ -103,3 +103,53 @@ interface TestimonialProps {
   createdAt: string;
   updatedAt: string;
 }
+
+interface DepartmentProps {
+  id: string;
+  departmentName: string;
+  departmentCode: string;
+  order: number;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string;
+}
+
+interface DesignationProps {
+  id: string;
+  designationName: string;
+  designationCode: string;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string;
+}
+
+interface FacultyProps {
+  id: string;
+  firstName: string;
+  slug: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  departmentId: string;
+  designationId: string;
+  showEmail: string;
+  showPhone: string;
+  status: string;
+  profileUrl: string;
+  qualification: string;
+  research: string;
+  publications: string;
+  experience: string;
+  achievements: string;
+  order: number;
+  createdAt: string;
+  updatedAt: string;
+  createdBy: string;
+  updatedBy: string;
+  department: DepartmentProps;
+  designation: DesignationProps;
+}

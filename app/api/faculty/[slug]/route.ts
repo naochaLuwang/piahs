@@ -2,15 +2,15 @@ import { NextResponse } from "next/server";
 import prisma from "../../../../lib/prismadb";
 
 interface IParams {
-  id?: string;
+  slug?: string;
 }
 
 export async function GET(request: Request, { params }: { params: IParams }) {
-  const { id } = params;
+  const { slug } = params;
 
-  const faculty = await prisma.people.findUnique({
+  const faculty = await prisma.people.findFirst({
     where: {
-      id: id,
+      slug: slug,
     },
     include: {
       department: true,
