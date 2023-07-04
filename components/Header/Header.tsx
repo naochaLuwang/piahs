@@ -80,11 +80,11 @@ const Header = () => {
           />
         </div>
 
-        <div className="flex h-12 pr-4 space-x-5">
+        <div className="flex ">
           {links.map((link, index) => (
             <Link href={link.href} key={link.name} target={link.target}>
               <h1
-                className={`pr-4 text-sm text-white ${
+                className={` text-sm text-white text-center px-1 xl:px-3 ${
                   index === links.length - 1 ? "border-r-0" : "border-r-white"
                 } border-2 border-transparent hover:font-medium hover:text-yellow-500`}
               >

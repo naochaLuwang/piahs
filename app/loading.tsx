@@ -1,5 +1,4 @@
 "use client";
-import { Triangle } from "react-loader-spinner";
 
 export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.

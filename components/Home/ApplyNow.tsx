@@ -45,7 +45,7 @@ const ApplyNow = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center w-full h-auto px-5 py-20 overflow-hidden bg-gray-50 lg:px-0">
+    <div className="flex flex-col items-center w-full h-auto px-10 py-20 overflow-hidden bg-gray-50 xl:px-0 ">
       <h1 className="text-3xl font-medium tracking-wide text-center text-indigo-950 apply-text">
         Get the Support You Need for the Career You Want
       </h1>

@@ -43,7 +43,7 @@ const responsive = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 1,
+    items: 3,
     slidesToSlide: 1,
   },
   mobile: {
@@ -65,7 +65,7 @@ const NewsEvent = () => {
   }, [loading]);
 
   return (
-    <div className="w-full h-auto py-20 px-14 lg:px-28">
+    <div className="w-full h-auto px-8 py-20 xl:px-28">
       <h1 className="mb-10 text-3xl font-semibold tracking-wide text-center text-indigo-950">
         News & Events
       </h1>

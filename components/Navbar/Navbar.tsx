@@ -62,8 +62,8 @@ export default function Navbar() {
             : " lg:fixed "
         } ${
           pathName == "/" && !isSticky
-            ? "bg-yellow-500 bg-opacity-60  top-44"
-            : "bg-yellow-500 bg-opacity-60 top-32"
+            ? "bg-yellow-500 bg-opacity-90  top-44"
+            : "bg-yellow-500 bg-opacity-90 top-32"
         }`}
       >
         <div className="z-50 hidden w-full h-10 pl-5 bg-transparent lg:block lg:fixed top-28"></div>
@@ -78,7 +78,7 @@ export default function Navbar() {
           : " lg:fixed"
       } ${
         pathName == "/" && !isSticky
-          ? "bg-yellow-500 bg-opacity-70  top-44"
+          ? "bg-yellow-500 bg-opacity-90  top-44"
           : "bg-yellow-500 bg-opacity-90 top-32"
       }`}
     >

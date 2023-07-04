@@ -13,7 +13,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
   description,
 }) => {
   return (
-    <div className="w-full relative mb-10 mx-0  bg-white border rounded-lg shadow-md lg:mx-2 h-[27rem] sm:w-72">
+    <div className="w-full relative mb-10 mx-0  bg-white border rounded-lg shadow-md lg:mx-2 h-[28rem] sm:w-72">
       <div className="relative w-full bg-white border h-44 lg:w-72">
         <Image
           src="/PIAHS_logon.png"
@@ -31,7 +31,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
         {description}
       </p>
 
-      <div className="absolute bottom-0 w-full left-1">
+      <div className="absolute w-full bottom-3 left-1">
         <div className="rounded-md  px-3.5 py-2 m-2 overflow-hidden relative group cursor-pointer border-2 font-medium border-blue-950 text-blue-950 w-fit">
           <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-blue-950 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
           <span className="relative text-base font-medium transition duration-300 text-blue-950 group-hover:text-white ease">

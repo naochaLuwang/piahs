@@ -61,7 +61,7 @@ const Whychooseus = () => {
       <h1 className="text-3xl tracking-wide text-center text-indigo-950 lg:text-start">
         Why Choose Us?
       </h1>
-      <div className="grid grid-cols-1 gap-6 mt-10 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 mt-10 lg:grid-cols-4 md:grid-cols-2 xl:grid-cols-4">
         {heroDetails.map((detail, index) => (
           <motion.div
             className="flex-col items-center hidden py-5 border-0 lg:flex lg:items-start lg:border-r-2 hero-detail"

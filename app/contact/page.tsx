@@ -27,14 +27,14 @@ const ContactPage = () => {
 
   return (
     <div className="w-full h-auto py-20 mt-20 lg:mt-40">
-      <h1 className="text-3xl tracking-wider text-center lg:text-4xl font-babas">
+      <h1 className="text-4xl tracking-wider text-center text-red-500 md:text-blue-500 lg:text-green-500 xl:text-yellow-500 font-babas">
         Contact Us
       </h1>
       <div
         ref={containerRef}
         className="grid gap-6 px-4 mt-10 md:grid-cols-3 md:px-10"
       >
-        <div className="flex flex-col items-center px-4 py-10 bg-blue-950 rounded-xl shadow-md md:h-[27rem]">
+        <div className="flex flex-col items-center px-4 xl:py-16 lg:py-12 md:py-10 bg-blue-950 rounded-xl shadow-md lg:h-[27rem] md:h-80">
           <Image
             src="/campus.png"
             alt="campus"
@@ -49,7 +49,7 @@ const ContactPage = () => {
             height={60}
             className="block lg:hidden"
           />
-          <h1 className="mt-5 text-2xl text-white lg:text-3xl font-babas">
+          <h1 className="mt-5 text-xl text-white lg:text-2xl xl:text-3xl font-babas">
             Campus Location
           </h1>
           <div className="w-12 h-1 mt-3 bg-white"></div>
@@ -58,7 +58,7 @@ const ContactPage = () => {
             Guwahati, Assam, India. Pin – 781026.
           </p>
         </div>
-        <div className="flex flex-col items-center px-4 py-10 bg-yellow-600 rounded-xl shadow-md md:h-[27rem]">
+        <div className="flex flex-col items-center px-4 xl:py-16 lg:py-12 md:py-10 md:h-80  bg-yellow-600 rounded-xl shadow-md lg:h-[27rem]">
           <Image
             src="/phone.png"
             alt="phone"
@@ -73,21 +73,21 @@ const ContactPage = () => {
             height={60}
             className="block lg:hidden"
           />
-          <h1 className="mt-5 text-2xl text-white lg:text-3xl font-babas">
+          <h1 className="mt-5 text-xl text-white lg:text-2xl xl:text-3xl font-babas">
             Helpline
           </h1>
           <div className="w-12 h-1 mt-3 bg-white"></div>
-          <div className="flex items-center mt-5 text-sm text-white lg:text-xl">
+          <div className="flex items-center mt-5 text-sm text-white lg:text-base xl:text-xl">
             <p>90851-22222</p>
           </div>
-          <div className="flex items-center mt-3 text-sm text-white lg:text-xl">
+          <div className="flex items-center mt-3 text-sm text-white lg:text-base xl:text-xl">
             <p>+919287957187</p>
           </div>
-          <div className="flex items-center mt-3 text-sm text-white lg:text-xl">
+          <div className="flex items-center mt-3 text-sm text-white lg:text-base xl:text-xl">
             <p>pratikshaiahs@gmail.com</p>
           </div>
         </div>
-        <div className="flex flex-col items-center px-4 py-10 bg-blue-950 rounded-xl shadow-md md:h-[27rem]">
+        <div className="flex flex-col items-center px-4 xl:py-16 lg:py-12 md:py-10 bg-blue-950 rounded-xl shadow-md md:h-80 lg:h-[27rem]">
           <Image
             src="/office.png"
             alt="office"
@@ -102,11 +102,11 @@ const ContactPage = () => {
             height={60}
             className="block lg:hidden"
           />
-          <h1 className="mt-5 text-2xl text-white lg:text-3xl font-babas">
+          <h1 className="mt-5 text-xl text-white lg:text-2xl xl:text-3xl font-babas">
             City Office
           </h1>
           <div className="w-12 h-1 mt-3 bg-white"></div>
-          <p className="mt-5 text-sm leading-loose text-center text-white lg:text-xl">
+          <p className="mt-5 text-sm leading-loose text-center text-white lg:text-base xl:text-xl">
             Pratiksha Hospital, Barbari, VIP road, Guwahati-781036.
           </p>
         </div>
