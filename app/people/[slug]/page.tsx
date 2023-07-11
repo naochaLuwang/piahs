@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { getFaculty } from "@/app/actions/getFaculty";
+
 import MyEditor from "@/components/Editor";
 import { Metadata } from "next";
 import client from "@/lib/prismadb";
@@ -65,7 +65,7 @@ const PeopleDetail = async ({ params }: any) => {
               <div className="flex flex-col items-start w-full h-auto px-4 lg:px-0 lg:items-center lg:mx-auto lg:space-x-5 lg:flex-row lg:max-w-7xl ">
                 <div className="relative w-40 h-40 rounded-md">
                   <Image
-                    src={faculty?.profileUrl}
+                    src={`${faculty?.profileUrl}`}
                     alt=""
                     fill
                     className="rounded-md"
@@ -146,3 +146,5 @@ const PeopleDetail = async ({ params }: any) => {
 };
 
 export default PeopleDetail;
+
+export const revalidate = 0;

@@ -51,3 +51,5 @@ const PeoplePage = async () => {
 };
 
 export default PeoplePage;
+
+export const revalidate = 0;

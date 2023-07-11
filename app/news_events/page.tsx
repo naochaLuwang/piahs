@@ -46,3 +46,5 @@ const NewsEvents = () => {
 };
 
 export default NewsEvents;
+
+export const revalidate = 0;

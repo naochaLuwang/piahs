@@ -35,7 +35,7 @@ const AlbumPage = () => {
   if (isLoading) {
     return (
       <div className="flex flex-col items-center w-full h-screen px-10 py-10 mt-40 lg:items-start">
-        <h1 className="lg:text-3xl text-2xl font-babas text-blue-950">
+        <h1 className="text-2xl lg:text-3xl font-babas text-blue-950">
           Photo Gallery
         </h1>
         <div className="grid grid-cols-1 gap-4 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
@@ -49,7 +49,7 @@ const AlbumPage = () => {
 
   return (
     <div className="flex flex-col items-center w-full h-screen px-10 py-5 mt-40 lg:items-start">
-      <h1 className="lg:text-3xl text-2xl font-babas text-blue-950">
+      <h1 className="text-2xl lg:text-3xl font-babas text-blue-950">
         Photo Gallery
       </h1>
       <div className="grid grid-cols-1 gap-4 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
@@ -85,3 +85,5 @@ const AlbumPage = () => {
 };
 
 export default AlbumPage;
+
+export const revalidate = 0;

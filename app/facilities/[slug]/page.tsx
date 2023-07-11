@@ -86,3 +86,5 @@ const FacilityDynamic = async ({ params }: any) => {
 };
 
 export default FacilityDynamic;
+
+export const revalidate = 0;

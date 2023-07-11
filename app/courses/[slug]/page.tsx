@@ -83,3 +83,4 @@ const CoursesDynamic = async ({ params }: any) => {
 };
 
 export default CoursesDynamic;
+export const revalidate = 0;

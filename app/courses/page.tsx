@@ -73,3 +73,5 @@ const CoursePage = async () => {
 };
 
 export default CoursePage;
+
+export const revalidate = 0;
