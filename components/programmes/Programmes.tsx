@@ -6,7 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 import Link from "next/link";
 
 interface DegreeCarouselProps {
-  degrees: Programme[];
+  degrees: any;
 }
 
 const Programmes: React.FC<DegreeCarouselProps> = ({ degrees }) => {

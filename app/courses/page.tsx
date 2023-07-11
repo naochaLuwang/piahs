@@ -9,13 +9,21 @@ import {
   TabsTrigger,
 } from "../../components/tabs";
 import Programmes from "../../components/programmes/Programmes";
-import { getAllProgrammes } from "../actions/getAllProgrammes";
-import { getProgrammes } from "../actions/getProgrammes";
+
+import client from "@/lib/prismadb";
 
 const CoursePage = async () => {
-  const programmes = await getAllProgrammes();
-  const degreeProgrammes = await getProgrammes("degree");
-  const diplomaProgrammes = await getProgrammes("diploma");
+  const programmes = await client.programme.findMany({});
+  const degreeProgrammes = await client.programme.findMany({
+    where: {
+      programmeType: "degree",
+    },
+  });
+  const diplomaProgrammes = await client.programme.findMany({
+    where: {
+      programmeType: "diploma",
+    },
+  });
 
   return (
     <div className="flex flex-col w-full py-16">

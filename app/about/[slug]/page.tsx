@@ -8,6 +8,7 @@ import Contact from "@/components/about/Contact";
 import QuickLinks from "@/components/about/QuickLinks";
 import ImportantLinks from "@/components/about/ImportantLinks";
 import { Metadata } from "next";
+import client from "@/lib/prismadb";
 type Props = {
   params: { slug: string };
 };
@@ -29,26 +30,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const response = await fetch(`${process.env.API_URL}/api/sublink/about`);
+  // const response = await fetch(`${process.env.API_URL}/api/sublink/about`);
 
-  const courses = await response.json();
+  const response = await client.sublinks.findMany({
+    where: {
+      slug: "about",
+    },
+  });
 
-  return courses.map((course: Programme) => ({
+  return response.map((course: any) => ({
     slug: course.slug,
   }));
 }
 
 const DynamicPage = async ({ params }: any) => {
-  const sublink: any = await getSubLink(params.slug);
+  const sublink = await client.sublinks.findMany({
+    where: {
+      slug: params.slug,
+    },
+  });
 
   return (
-    <div className="flex flex-col w-full px-4 md:flex-row lg:px-10">
+    <div className="flex flex-col w-full px-4 md:flex-row xl:px-10 lg:px-6">
       <div className="flex flex-col w-full h-auto ">
         <BreadCrumb home={"Home"} link={"About"} sublink={sublink[0]?.title} />
         <h1 className="mt-5 ml-2 text-2xl font-medium tracking-wider text-blue-800 lg:ml-0">
           {sublink[0]?.title}
         </h1>
-        <div className="w-full">
+        <div className="w-full md:max-w-lg lg:max-w-full">
           <MyEditor content={sublink[0]?.content} />
         </div>
       </div>

@@ -8,7 +8,7 @@ import CarousalButton from "../CarousalButton";
 import Link from "next/link";
 
 interface DegreeCarouselProps {
-  degrees: Programme[];
+  degrees: any;
 }
 
 const responsive = {

@@ -25,7 +25,7 @@ const responsive = {
 };
 
 interface TestProps {
-  testimonials: TestimonialProps[];
+  testimonials: any;
 }
 
 const Testimonial: React.FC<TestProps> = ({ testimonials }) => {

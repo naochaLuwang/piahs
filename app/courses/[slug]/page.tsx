@@ -1,27 +1,25 @@
 import { Metadata } from "next";
 
 import BreadCrumb from "@/components/BreadCrumb";
-import { getSubLink } from "@/app/actions/getSublink";
 
 import MyEditor from "@/components/Editor";
 import Contact from "@/components/about/Contact";
 import QuickLinks from "@/components/about/QuickLinks";
 import ImportantLinks from "@/components/about/ImportantLinks";
+import client from "@/lib/prismadb";
 
 type Props = {
   params: { slug: string };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  // read route params
   const slug = params.slug;
 
-  // fetch data
-  const course = await fetch(
-    `${process.env.API_URL}/api/sublinks/${slug}`
-  ).then((res) => res.json());
-
-  // optionally access and extend (rather than replace) parent metadata
+  const course = await client.sublinks.findMany({
+    where: {
+      slug: params.slug,
+    },
+  });
 
   return {
     title: `${course[0].subtitle}| PIAHS`,
@@ -29,17 +27,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const response = await fetch(`${process.env.API_URL}/api/sublink/courses`);
+  const courses = await client.sublinks.findMany({
+    where: {
+      slug: "courses",
+    },
+  });
 
-  const courses = await response.json();
-
-  return courses.map((course: Programme) => ({
+  return courses.map((course: any) => ({
     slug: course.slug,
   }));
 }
 
 const CoursesDynamic = async ({ params }: any) => {
-  const sublink: any = await getSubLink(params.slug);
+  const sublink = await client.sublinks.findMany({
+    where: {
+      slug: params.slug,
+    },
+  });
 
   return (
     <div className="flex flex-col w-full md:flex-row">

@@ -3,8 +3,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../tabs";
 import DegreeCarousel from "./DegreeCarousel";
 
 interface ProgrammeProps {
-  degreeCarousel: Programme[];
-  diplomaCarousel: Programme[];
+  degreeCarousel: any;
+  diplomaCarousel: any;
 }
 
 const Programme: React.FC<ProgrammeProps> = ({

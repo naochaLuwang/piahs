@@ -4,7 +4,7 @@ export default function AdmissionLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex w-full h-auto px-10 pb-20 mt-40 overflow-hidden ">
+    <div className="flex w-full h-auto px-4 pb-20 overflow-hidden stat-40 lg:px-10 ">
       {children}
     </div>
   );

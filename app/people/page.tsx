@@ -1,10 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { getAllFaculty } from "../actions/getAllFaculty";
+
+import client from "@/lib/prismadb";
 
 const PeoplePage = async () => {
-  const faculties = await getAllFaculty();
+  const faculties = await client.people.findMany({
+    include: {
+      designation: true,
+    },
+  });
+  console.log(faculties);
+
   return (
     <div className="w-full h-screen px-8 py-10 lg:mx-auto lg:max-w-7xl lg:px-0">
       <h1 className="text-2xl font-semibold tracking-wide lg:text-3xl font-oswald text-indigo-950">
@@ -12,7 +18,7 @@ const PeoplePage = async () => {
       </h1>
       <div className="grid grid-cols-1 gap-6 mt-10 lg:grid-cols-4">
         {faculties &&
-          faculties.map((faculty: FacultyProps, index: any) => (
+          faculties.map((faculty: any, index: any) => (
             <div
               key={index}
               className="w-full h-[30rem] bg-white border shadow-sm"

@@ -7,19 +7,20 @@ import MyEditor from "@/components/Editor";
 import Contact from "@/components/about/Contact";
 import QuickLinks from "@/components/about/QuickLinks";
 import ImportantLinks from "@/components/about/ImportantLinks";
+import client from "@/lib/prismadb";
 
 type Props = {
   params: { slug: string };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  // read route params
   const slug = params.slug;
 
-  // fetch data
-  const course = await fetch(
-    `${process.env.API_URL}/api/sublinks/${slug}`
-  ).then((res) => res.json());
+  const course = await client.sublinks.findMany({
+    where: {
+      slug: params.slug,
+    },
+  });
 
   // optionally access and extend (rather than replace) parent metadata
 
@@ -29,9 +30,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const response = await fetch(`${process.env.API_URL}/api/sublink/facilities`);
-
-  const facilities = await response.json();
+  const facilities = await client.sublinks.findMany({
+    where: {
+      slug: "facilities",
+    },
+  });
 
   return facilities.map((facility: any) => ({
     slug: facility.slug,
@@ -39,7 +42,11 @@ export async function generateStaticParams() {
 }
 
 const FacilityDynamic = async ({ params }: any) => {
-  const sublink: any = await getSubLink(params.slug);
+  const sublink = await client.sublinks.findMany({
+    where: {
+      slug: params.slug,
+    },
+  });
 
   return (
     <div className="flex flex-col w-full md:flex-row">
