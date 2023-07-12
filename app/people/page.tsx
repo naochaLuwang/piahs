@@ -9,7 +9,6 @@ const PeoplePage = async () => {
       designation: true,
     },
   });
-  console.log(faculties);
 
   return (
     <div className="w-full h-screen px-8 py-10 lg:mx-auto lg:max-w-7xl lg:px-0">
@@ -51,5 +50,3 @@ const PeoplePage = async () => {
 };
 
 export default PeoplePage;
-
-export const revalidate = 0;

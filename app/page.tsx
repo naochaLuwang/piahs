@@ -7,7 +7,6 @@ import NewsEvents from "@/components/Home/NewsEvents";
 import Testimonial from "@/components/Home/Testimonial";
 import Whychooseus from "@/components/Home/WhyChooseUs";
 import HeroPage from "@/components/HeroPage";
-import { getAllTestimonials } from "@/app/actions/getAllTestimonial";
 
 // metadata component
 

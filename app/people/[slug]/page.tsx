@@ -85,7 +85,7 @@ const PeopleDetail = async ({ params }: any) => {
             </div>
             {/* Content of the div */}
           </div>
-          <div className="w-full px-4 mx-auto mt-10 lg:max-w-7xl lg:px-0">
+          <div className="w-full px-4 mx-auto mt-5 lg:max-w-7xl lg:px-0">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="px-4 text-white hover:no-underline bg-gradient-to-tr from-indigo-700 to-indigo-950">
@@ -146,5 +146,3 @@ const PeopleDetail = async ({ params }: any) => {
 };
 
 export default PeopleDetail;
-
-export const revalidate = 0;

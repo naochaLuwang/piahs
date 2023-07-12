@@ -1,20 +1,23 @@
 import React from "react";
 
 import BreadCrumb from "@/components/BreadCrumb";
-import { getSubLink } from "@/app/actions/getSublink";
 
-import { getLink } from "@/app/actions/getLinks";
 import MyEditor from "@/components/Editor";
 import Contact from "@/components/about/Contact";
 import QuickLinks from "@/components/about/QuickLinks";
 import ImportantLinks from "@/components/about/ImportantLinks";
+import client from "@/lib/prismadb";
 
 export const metadata = {
   title: "Dynamic page",
 };
 
 const AdmissionDynamicPage = async ({ params }: any) => {
-  const sublink: any = await getSubLink(params.slug);
+  const sublink: any = await client.sublinks.findFirst({
+    where: {
+      slug: params.slug,
+    },
+  });
 
   // @ts-ignore
   return (

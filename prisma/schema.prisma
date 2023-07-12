@@ -206,6 +206,7 @@ model Message {
     phone     String
     message   String
     createdAt DateTime @default(now())
+    status    String
 }
 
 model Programme {
