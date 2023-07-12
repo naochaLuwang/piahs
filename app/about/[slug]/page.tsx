@@ -1,7 +1,6 @@
 import React from "react";
 
 import BreadCrumb from "@/components/BreadCrumb";
-import { getSubLink } from "@/app/actions/getSublink";
 
 import MyEditor from "@/components/Editor";
 import Contact from "@/components/about/Contact";
@@ -9,6 +8,7 @@ import QuickLinks from "@/components/about/QuickLinks";
 import ImportantLinks from "@/components/about/ImportantLinks";
 import { Metadata } from "next";
 import client from "@/lib/prismadb";
+import { Sublinks } from "@prisma/client";
 type Props = {
   params: { slug: string };
 };
@@ -18,9 +18,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug;
 
   // fetch data
-  const about = await fetch(`${process.env.API_URL}/api/sublinks/${slug}`).then(
-    (res) => res.json()
-  );
+  // const about = await fetch(`${process.env.API_URL}/api/sublinks/${slug}`).then(
+  //   (res) => res.json()
+  // );
+
+  const about: any = await client.sublinks.findMany({
+    where: {
+      slug: slug,
+    },
+  });
 
   // optionally access and extend (rather than replace) parent metadata
 

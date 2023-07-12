@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 
 import BreadCrumb from "@/components/BreadCrumb";
-import { getSubLink } from "@/app/actions/getSublink";
 
 import MyEditor from "@/components/Editor";
 import Contact from "@/components/about/Contact";
